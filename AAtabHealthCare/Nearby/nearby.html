@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Services</title>
+    <style>
+        /* General Styles */
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        } */
+
+        /* header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        } */
+
+        h1 {
+            margin: 0;
+        }
+
+        /* Back Button Styles */
+        /* .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px 15px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-button:hover {
+            background-color: #bbb;
+        } */
+
+        /* Card Styles */
+        *{
+           
+        }
+        .card-container {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .top-card {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .bottom-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #555;
+        }
+    </style>
+ 
+  <!--=========== MY CSS LINK START =============-->
+  
+      <link rel="stylesheet" type="text/css" href="nearindex2.css">
+      
+  <!--=========== MY CSS LINK END =============-->
+  
+  
+      <!--============ FONT AWESOME CSS LINK START ============-->
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="css/styles.css">
+  
+  <!--============ FONT AWESOME CSS LINK END ============-->
+</head>
+<body>
+    <!-- <a href="index.html" class="back-button" onclick="goBack()">Back</a> -->
+    
+        <button style="
+        position: absolute;
+    padding: 10px 20px; 
+    margin-top: 90px;
+    background-color: #6c757d; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+    transition: background-color 0.2s ease; margin-left: 40px;
+  " onclick="window.location.href='/index.html'">← Back</button>
+
+    <header class="headin">
+
+
+    </header>
+    <h1 style=" font-size: 30px; margin-top:90px ; text-align: center;">Nearby HealthCare</h1>
+    <br>
+    
+    <main >
+        
+        
+        <!-- <div class="card-container">
+            <div class="top-card">
+                <div class="card" id="healthcare-card" onclick="navigateTo('about.html')">
+                    <img src="healthcare-icon.png" alt="Healthcare Center" class="card-img">
+                    <h2>Healthcare Center</h2>
+                    <p>Comprehensive health services including mental wellness and fitness programs.</p>
+                </div>
+            </div> -->
+            <div class="bottom-cards">
+                <div class="card" id="medical-card" onclick="navigateTo('medical.html')">
+                    <img src="images/nearby/Hospital.jpg" alt="Medical" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Hospitals</p>
+                    <p>Explore medical services including general consultations and diagnostics.</p>
+                </div>
+            <div class="bottom-cards">
+                <div class="card" id="medical-card" onclick="navigateTo('medical.html')">
+                    <img src="images/nearby/MedicalClinic.jpg" alt="Medical" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Medical Clinic</p>
+                    <p>Explore medical services including general consultations and diagnostics.</p>
+                </div>
+                <div class="card" id="dental-card" onclick="navigateTo('nurses1.html')">
+                    <img src="images/nearby/DentalClinic.png" alt="Dental" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Dental Clinic</p>
+                    <p>Access oral health care services such as checkups, cleaning, and surgery.</p>
+                </div>
+                <div class="card" id="pharmacy-card" onclick="navigateTo('Doctors.html')">
+                    <img src="images/nearby/Pharmacy.jpg" alt="Pharmacy" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Pharmacies</p>
+                    <p>Find medications and health products for your needs.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br><br><br>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <p style="font-weight: bold;font-size: 25px; color: #0061ff; ">SymptoAid</p>
+                <p>SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance. Visit us at Teodora Alonzo Street for more information and healthcare support.</p>
+            </div>
+    
+            <div class="footer-links">
+                <p style="font-weight: bold;font-size: 25px;">Quick Links</p>
+                <ul>
+                    <li ><a href="../../index.html">Home</a></li>
+                    <li ><a href="../atabs_Health_Care/Admin2/news-report.php">News</a></li>
+                    <li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
+                    <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li>
+                    <li ><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
+                    <li ><a href="nearby.html">Nearby Healthcare</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <p style="font-weight: bold;font-size: 25px;">Contact Us</p>
+                <br>
+                <p  style="font-size: 20px;"><i class="fas fa-envelope"></i> atabhc2019@gmail.com</p>
+                <p style="font-size: 20px;"><i class="fas fa-phone" ></i> +4209087 </p>
+                
+                <p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
+            </div>
+    
+            <div class="footer-social">
+                <p style="font-weight: bold;font-size: 25px;">Follow Us</p>
+                <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px;"><i class="fab fa-facebook"></i></a>
+                <a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;"><i class="fab fa-facebook-messenger"></i></a>
+                <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a> -->
+                <br>
+                <p style="font-weight: bold;font-size: 25px;">Reference By:</p>
+                <img src="AAtabHealthCare/HealthTopics/images/DOH.png" alt="" style="border-radius: 110px; width: 80px; height: 80px;">
+                
+                
+                
+                <!-- Email Icon -->
+                <!-- <a href="" style="font-size: 35px;">
+                    <i class="fas fa-envelope"></i>
+                </a> -->
+            </div>
+        </div>
+    
+        <!-- <div class="footer-bottom">
+            <p>&copy; 2024 Health Center. All rights reserved.</p>
+        </div> -->
+    </footer>
+    <script>
+        // Function to navigate to the specific HTML page
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script type="text/javascript" src="nearheader.js"></script>
+    <script type="text/javascript" src="nearindex.js"></script>
+</body>
+</html>

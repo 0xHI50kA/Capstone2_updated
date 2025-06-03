@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Checker</title>
+    <style>
+       .age-verification-container {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 15px;
+    
+}
+
+.age-input-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.back-button {
+    background-color: #dc3545;
+}
+
+.back-button:hover {
+    background-color: #a71d2a;
+}
+    </style>
+           <link rel="stylesheet" href="AiHeader.css">
+           <!--=========== MY CSS LINK START =============-->
+        
+           <link rel="stylesheet" type="text/css" href="index3.css">
+            
+           <!--=========== MY CSS LINK END =============-->
+       <!--============ FONT AWESOME CSS LINK START ============-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+
+       <!--============ FONT AWESOME CSS LINK END ============-->
+</head>
+<body>
+    <button style="
+    position: absolute;
+padding: 10px 20px; 
+margin-top: 90px;
+background-color: #6c757d; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+font-size: 16px;
+transition: background-color 0.2s ease; margin-left: 40px;
+" onclick="window.location.href='forwhom.html'">← Back</button>
+    <!-- <header>
+        <div class="logo">
+            <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
+        </div>
+        <h2>AI Symptom Checker</h2>
+    </header> -->
+    <header class="headin">
+
+
+    </header>
+
+    <div class="age-verification-container">
+        <h2>Age Verification</h2>
+        <p>You must be at least 18 years old to use the Symptom Checker. By proceeding, you confirm that you meet this age requirement.</p>
+        <br><br>
+        <div class="age-input-card">
+            <h1>How Old Are You?</h1>
+            <input type="number" id="ageInput" placeholder="Enter your age" />
+            <br />
+            <button onclick="checkAge()" id="submitButton">Submit</button>
+    
+            <div id="backDiv" style="display:none;">
+                <button onclick="goBack()" class="back-button">Back to Home</button>
+                <button onclick="goBack1()" class="back-button">Back to Terms and Conditions</button>
+            </div>
+            <p id="message"></p>
+        </div>
+    </div>
+  
+<!--================= FOOTER START ==================-->
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <p style="font-weight: bold;font-size: 25px; color: #0061ff; "> <i class="fa-solid fa-notes-medical"></i> SymptoAid</p>
+            <p style="font-size: 20px;">SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance.</p>
+        </div>
+
+        <div class="footer-links">
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Important Links</p>
+            <ul>
+                <!-- <li ><a href="../../index.html">Home</a></li> -->
+                <li ><a href="/AAtabHealthCare/newsupdate/news.html">News</a></li>
+                <li ><a href="/AAtabHealthCare/Eventss/Event1.html">Events</a></li>
+                <!-- <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li> -->
+				<li ><a href="/AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
+				<li ><a href="/nearby.html">Nearby Healthcare</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Contact Us</p>
+			
+			<p  style="font-size: 20px;"><i class="fas fa-envelope"></i> atabhc2019@gmail.com</p>
+            <p style="font-size: 20px;"><i class="fas fa-phone" ></i> +4209087 </p>
+			
+            <p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
+        </div>
+
+        <div class="footer-social">
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
+            <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+			<a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
+            <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a> -->
+			<br>
+			<p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
+			<a href="https://doh.gov.ph" >Department of Health</a>
+			<br>
+			<a href="https://www.who.int/" >World Health Organization</a>
+			
+			
+			
+			
+			<!-- Email Icon -->
+			<!-- <a href="" style="font-size: 35px;">
+				<i class="fas fa-envelope"></i>
+			</a> -->
+        </div>
+		
+    </div>
+	<button id="backToTop"   class="back-to-top">↑ </button>
+    <!-- <div class="footer-bottom">
+        <p>&copy; 2024 Health Center. All rights reserved.</p>
+    </div> -->
+</footer>
+<!--================= FOOTER END ==================-->
+    
+
+    <script>
+        function checkAge() {
+            const age = document.getElementById("ageInput").value;
+            const message = document.getElementById("message");
+            const submitButton = document.getElementById("submitButton");
+            const backDiv = document.getElementById("backDiv");
+
+            if (!age) {
+                message.textContent = "Please enter your age.";
+                return;
+            }
+
+            if (age < 18) {
+                // Remove Submit button and show back button
+                submitButton.style.display = "none";
+                backDiv.style.display = "block";
+
+                message.textContent = 
+                    "Users under 18 cannot use the symptom checker. " +
+                    "Please seek assistance from an adult or visit a nearby healthcare center.";
+                message.style.color = "red";
+            } else {
+                // Redirect if user is 18+
+                message.textContent = 
+                    "You are eligible to use the symptom checker. Redirecting...";
+                message.style.color = "green";
+
+                // Redirect to the symptom checker page
+                setTimeout(() => {
+                    window.location.href = "me2.html";
+                }, 2000);
+            }
+        }
+
+        function goBack() {
+            window.location.href = "../../index.html";
+        }
+        function goBack1() {
+            window.location.href = "terms.html";
+        }
+    </script>
+    <script type="text/javascript" src="AiHeader.js"></script>
+    <script type="text/javascript" src="AiIndex.js"></script>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+           var backToTopButton = document.getElementById("backToTop");
+       
+           // Show/hide the button on scroll
+           window.onscroll = function () {
+               if (document.documentElement.scrollTop > 300) {
+                   backToTopButton.classList.add("show");
+               } else {
+                   backToTopButton.classList.remove("show");
+               }
+           };
+       
+           // Scroll smoothly to the top when clicked
+           backToTopButton.addEventListener("click", function () {
+               window.scrollTo({ top: 0, behavior: "smooth" });
+           });
+       });
+       </script>
+</body>
+</html>

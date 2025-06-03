@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Updatenn</title>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+           
+        } */
+         
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 80px;
+            text-align: center;
+        }
+        /* News Cards */
+.news-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.news-card {
+    width: 300px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.news-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.news-card:hover {
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; 
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-content p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+    </style>
+     <!-- <link rel="stylesheet" href="AiHeader.css"> -->
+     <link rel="stylesheet" type="text/css" href="newsstyles.css">
+     <!--============ FONT AWESOME CSS LINK START ============-->
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css">
+  
+     <!--============ FONT AWESOME CSS LINK END ============-->
+</head>
+<body>
+    <button style="
+        position: absolute;
+    padding: 10px 20px; 
+    margin-top: 90px;
+    background-color: #6c757d; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+    transition: background-color 0.2s ease; margin-left: 40px;
+  " onclick="window.location.href='/index.html'">← Back</button>
+      <header class="headin">
+
+
+      </header>
+      
+    <div class="container" id="#home">
+        <h1 style=" text-align: center;font-size: 40px;font-family: Poppins;color: #333333;">News Updates</h1>
+        <br>
+        <div class="news-cards">
+
+            <div class="news-card" onclick="openNewsModal('Announcement', 'Pakaammo gagayyem!Under-Five Consultation will be catered.',
+             './images/march24.jpg')">
+                <img src="./images/march24.jpg" alt="News Image">
+                <h3>Announcement</h3>
+                <p>Click to read more...</p>
+            </div>
+            <div class="news-card" onclick="openNewsModal('Atab HC', 'From Atab HC Health Center .', 
+            './images/march21.jpg')">
+                <img src="./images/march21.jpg" alt="News Image">
+                <h3>Atab HC</h3>
+                <p>Click to read more...</p>
+            </div>
+
+            <div class="news-card" onclick="openNewsModal('Announcement', '𝗔𝗻𝗻𝗼𝘂𝗻𝗰𝗲𝗺𝗲𝗻𝘁 - 𝗟𝗮𝗯𝗼𝗿𝗮𝘁𝗼𝗿𝘆 𝗦𝗲𝗿𝘃𝗶𝗰𝗲𝘀 𝗮𝘁 𝘁𝗵𝗲 𝗖𝗶𝘁𝘆 𝗛𝗲𝗮𝗹𝘁𝗵 𝗦𝗲𝗿𝘃𝗶𝗰𝗲𝘀 𝗢𝗳𝗳𝗶𝗰𝗲 (𝗖𝗛𝗦𝗢) 𝘄𝗶𝗹𝗹 𝗼𝗻𝗹𝘆 𝗵𝗮𝘃𝗲 𝘁𝗵𝗲 𝗳𝗼𝗹𝗹𝗼𝘄𝗶𝗻𝗴 𝗮𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲',
+             './images/march18.jpg')">
+                <img src="./images/march18.jpg" alt="News Image">
+                <h3>Announcement</h3>
+                <p>Click to read more...</p>
+            </div>
+            <div class="news-card" onclick="openNewsModal('World TB Day', '', 
+            './images/march13_1.jpg')">
+                <img src="./images/march13_1.jpg" alt="News Image">
+                <h3>World TB Day</h3>
+                <p>Click to read more...</p>
+            </div>
+            <div class="news-card" onclick="openNewsModal('World TB Day', 'Yes, we definitely CAN end tuberculosis! In early celebration of World TB Day, we hope to see you at the Baguio City Athletic Bowl to avail of the following services', 
+            './images/march13.jpg')">
+                <img src="./images/march13.jpg" alt="News Image">
+                <h3>World TB Day</h3>
+                <p>Click to read more...</p>
+            </div>
+
+            <!-- Second News Card -->
+            <div class="news-card" onclick="openNewsModal('HPV', 'Pakaammo gagayyem! Para kadagiti annak tayo nga babbai nga agtawen ti 9 agingga 14 years old.',
+             './images/feb25.jpg')">
+                <img src="./images/feb25.jpg" alt="News Image">
+                <h3>HPV</h3>
+                <p>Click to read more...</p>
+            </div>
+             <!-- First News Card -->
+             <div class="news-card" onclick="openNewsModal('Oral Heath Month', '𝐄𝐯𝐞𝐫𝐲 𝐅𝐞𝐛𝐫𝐮𝐚𝐫𝐲, 𝐰𝐞 𝐜𝐞𝐥𝐞𝐛𝐫𝐚𝐭𝐞 𝐎𝐫𝐚𝐥 𝐇𝐞𝐚𝐥𝐭𝐡 𝐌𝐨𝐧𝐭𝐡, 𝐚 𝐭𝐢𝐦𝐞 𝐭𝐨 𝐫𝐞𝐦𝐢𝐧𝐝 𝐨𝐮𝐫𝐬𝐞𝐥𝐯𝐞𝐬 𝐨𝐟 𝐭𝐡𝐞 𝐢𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐜𝐞 𝐨𝐟 𝐠𝐨𝐨𝐝 𝐝𝐞𝐧𝐭𝐚𝐥 𝐜𝐚𝐫𝐞 𝐚𝐧𝐝 𝐡𝐨𝐰 𝐢𝐭 𝐚𝐟𝐟𝐞𝐜𝐭𝐬 𝐨𝐮𝐫 𝐨𝐯𝐞𝐫𝐚𝐥𝐥 𝐰𝐞𝐥𝐥-𝐛𝐞𝐢𝐧𝐠. 𝐁𝐲 𝐛𝐫𝐮𝐬𝐡𝐢𝐧𝐠 𝐨𝐮𝐫 𝐭𝐞𝐞𝐭𝐡 𝐫𝐞𝐠𝐮𝐥𝐚𝐫𝐥𝐲, 𝐟𝐥𝐨𝐬𝐬𝐢𝐧𝐠, 𝐚𝐧𝐝 𝐯𝐢𝐬𝐢𝐭𝐢𝐧𝐠 𝐭𝐡𝐞 𝐝𝐞𝐧𝐭𝐢𝐬𝐭, 𝐰𝐞 𝐜𝐚𝐧 𝐤𝐞𝐞𝐩 𝐨𝐮𝐫 𝐭𝐞𝐞𝐭𝐡 𝐚𝐧𝐝 𝐠𝐮𝐦𝐬 𝐡𝐞𝐚𝐥𝐭𝐡𝐲 𝐚𝐧𝐝 𝐩𝐫𝐞𝐯𝐞𝐧𝐭 𝐜𝐚𝐯𝐢𝐭𝐢𝐞𝐬 𝐚𝐧𝐝 𝐠𝐮𝐦 𝐝𝐢𝐬𝐞𝐚𝐬𝐞. 𝐋𝐞𝐭 𝐮𝐬 𝐦𝐚𝐤𝐞 𝐝𝐞𝐧𝐭𝐚𝐥 𝐡𝐞𝐚𝐥𝐭𝐡 𝐚 𝐩𝐫𝐢𝐨𝐫𝐢𝐭𝐲 𝐚𝐧𝐝 𝐞𝐧𝐣𝐨𝐲 𝐚 𝐛𝐫𝐢𝐠𝐡𝐭𝐞𝐫, 𝐡𝐞𝐚𝐥𝐭𝐡𝐢𝐞𝐫 𝐬𝐦𝐢𝐥𝐞!',
+             './images/feb12.jpg')">
+                <img src="./images/feb12.jpg" alt="News Image">
+                <h3>Oral Heath Month</h3>
+                <p>Click to read more...</p>
+            </div>
+            
+            <div class="news-card" onclick="openNewsModal('Heart Month', '𝐉𝐨𝐢𝐧 𝐮𝐬 𝐭𝐡𝐢𝐬 𝐅𝐞𝐛𝐫𝐮𝐚𝐫𝐲 𝐭𝐨 𝐜𝐞𝐥𝐞𝐛𝐫𝐚𝐭𝐞 𝐏𝐡𝐢𝐥𝐢𝐩𝐩𝐢𝐧𝐞 𝐇𝐞𝐚𝐫𝐭 𝐌𝐨𝐧𝐭𝐡, 𝐫𝐚𝐢𝐬𝐢𝐧𝐠 𝐚𝐰𝐚𝐫𝐞𝐧𝐞𝐬𝐬 𝐚𝐛𝐨𝐮𝐭 𝐡𝐞𝐚𝐫𝐭 𝐡𝐞𝐚𝐥𝐭𝐡 𝐚𝐧𝐝 𝐩𝐫𝐨𝐦𝐨𝐭𝐢𝐧𝐠 𝐡𝐞𝐚𝐥𝐭𝐡𝐢𝐞𝐫 𝐥𝐢𝐟𝐞𝐬𝐭𝐲𝐥𝐞𝐬. 𝐂𝐚𝐫𝐝𝐢𝐨𝐯𝐚𝐬𝐜𝐮𝐥𝐚𝐫 𝐝𝐢𝐬𝐞𝐚𝐬𝐞𝐬 𝐚𝐫𝐞 𝐚 𝐥𝐞𝐚𝐝𝐢𝐧𝐠 𝐜𝐚𝐮𝐬𝐞 𝐨𝐟 𝐝𝐞𝐚𝐭𝐡, 𝐬𝐨 𝐥𝐞𝐭’𝐬 𝐩𝐫𝐢𝐨𝐫𝐢𝐭𝐢𝐳𝐞 𝐡𝐞𝐚𝐫𝐭 𝐡𝐞𝐚𝐥𝐭𝐡 𝐭𝐡𝐫𝐨𝐮𝐠𝐡 𝐫𝐞𝐠𝐮𝐥𝐚𝐫 𝐞𝐱𝐞𝐫𝐜𝐢𝐬𝐞, 𝐛𝐚𝐥𝐚𝐧𝐜𝐞𝐝 𝐝𝐢𝐞𝐭𝐬, 𝐚𝐧𝐝 𝐫𝐨𝐮𝐭𝐢𝐧𝐞 𝐜𝐡𝐞𝐜𝐤-𝐮𝐩𝐬. 𝐓𝐨𝐠𝐞𝐭𝐡𝐞𝐫, 𝐰𝐞 𝐜𝐚𝐧 𝐜𝐚𝐫𝐞 𝐟𝐨𝐫 𝐨𝐮𝐫 𝐡𝐞𝐚𝐫𝐭𝐬, 𝐞𝐝𝐮𝐜𝐚𝐭𝐞 𝐨𝐮𝐫𝐬𝐞𝐥𝐯𝐞𝐬, 𝐚𝐧𝐝 𝐢𝐧𝐬𝐩𝐢𝐫𝐞 𝐨𝐮𝐫 𝐜𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐢𝐞𝐬 𝐭𝐨 𝐥𝐢𝐯𝐞 𝐡𝐞𝐚𝐫𝐭-𝐡𝐞𝐚𝐥𝐭𝐡𝐲 𝐥𝐢𝐯𝐞𝐬.', 
+            './images/feb3.jpg')">
+                <img src="./images/feb3.jpg" alt="News Image">
+                <h3>Heart Month</h3>
+                <p>Click to read more...</p>
+            </div>
+           
+            
+        </div>
+        <br><br>
+        <!-- Modal Structure -->
+        <div id="newsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeNewsModal()">&times;</span>
+                <h2 id="newsTitle">News Title</h2>
+                <img id="newsImage" src="" alt="News Image" style="width: 100%; border-radius: 5px; margin-bottom: 20px;">
+                <p id="newsContent">News Content</p>
+            </div>
+        </div>
+       
+    </div>
+<!--================= FOOTER START ==================-->
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <p style="font-weight: bold;font-size: 25px; color: #0061ff; "> <i class="fa-solid fa-notes-medical"></i> SymptoAid</p>
+            <p style="font-size: 20px;">SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance.</p>
+        </div>
+
+        <div class="footer-links">
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Important Links</p>
+            <ul>
+                <!-- <li ><a href="../../index.html">Home</a></li> -->
+                <li ><a href="news.html">News</a></li>
+                <li ><a href="/AAtabHealthCare/Eventss/Event1.html">Events</a></li>
+                <!-- <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li> -->
+				<li ><a href="/AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
+				<li ><a href="/nearby.html">Nearby Healthcare</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Contact Us</p>
+			
+			<p  style="font-size: 20px;"><i class="fas fa-envelope"></i> atabhc2019@gmail.com</p>
+            <p style="font-size: 20px;"><i class="fas fa-phone" ></i> +4209087 </p>
+			
+            <p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
+        </div>
+
+        <div class="footer-social">
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
+            <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+			<a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
+            <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a> -->
+			<br>
+			<p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
+			<a href="https://doh.gov.ph" >Department of Health</a>
+			<br>
+			<a href="https://www.who.int/" >World Health Organization</a>
+			
+			
+			
+			
+			<!-- Email Icon -->
+			<!-- <a href="" style="font-size: 35px;">
+				<i class="fas fa-envelope"></i>
+			</a> -->
+        </div>
+		
+    </div>
+	<button id="backToTop"   class="back-to-top">↑ </button>
+    <!-- <div class="footer-bottom">
+        <p>&copy; 2024 Health Center. All rights reserved.</p>
+    </div> -->
+</footer>
+
+<!--================= FOOTER END ==================-->
+
+<!--================= FOOTER END ==================-->
+    <script type="text/javascript" src="newsheader.js"></script>
+    <script type="text/javascript" src="newsindex.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var backToTopButton = document.getElementById("backToTop");
+        
+            // Show/hide the button on scroll
+            window.onscroll = function () {
+                if (document.documentElement.scrollTop > 300) {
+                    backToTopButton.classList.add("show");
+                } else {
+                    backToTopButton.classList.remove("show");
+                }
+            };
+        
+            // Scroll smoothly to the top when clicked
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+        </script>
+        <script>
+function openNewsModal(title, content, image) {
+    // Set modal content
+    document.getElementById("newsTitle").innerText = title;
+    document.getElementById("newsImage").src = image;
+    document.getElementById("newsContent").innerText = content;
+    
+
+    // Show the modal
+    document.getElementById("newsModal").style.display = "block";
+}
+
+function closeNewsModal() {
+    // Hide the modal
+    document.getElementById("newsModal").style.display = "none";
+}
+
+// Close modal when clicking outside the modal content
+window.onclick = function(event) {
+    var modal = document.getElementById("newsModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+</script>
+</body>
+
+</html>
