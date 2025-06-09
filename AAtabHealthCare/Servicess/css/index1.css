@@ -55,7 +55,7 @@ header{
 	right: 0;
 	left: 0;
 	width: 100%;
-	padding:15px 5px ;
+	padding:15px 5px 9px;
 	background: var(--light);
 	/*box-shadow: 0 0 5px var(--white);*/
 	z-index: 999;
@@ -63,16 +63,13 @@ header{
 
 /* logo styling */
 .logo{
-	align-self: flex-start;
 	position: relative;
 	z-index: ;
 }
-.logo a{
- text-decoration: none;
- text-transform: ;
- font-size: 30px;
- font-weight: 700;
- color: var(--blue);
+.logo a img {
+	height: 48px;/* Adjust size as needed */
+	padding: 0px;
+	width: auto;
 }
 
 /* nav links */

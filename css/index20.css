@@ -56,7 +56,7 @@ header{
 	right: 0;
 	left: 0;
 	width: 100%;
-	padding:15px 5px 9px;
+	padding:15px 5px 15px;
 	background: var(--light);
 	/*box-shadow: 0 0 5px var(--white);*/
 	z-index: 999;

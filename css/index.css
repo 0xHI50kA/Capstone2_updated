@@ -46,6 +46,7 @@ body{
 }
 
 header{
+	all: unset;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -63,29 +64,28 @@ header{
 
 /* logo styling */
 .logo{
-	align-self: flex-start;
 	position: relative;
 	z-index: ;
 }
-.logo a{
- text-decoration: none;
- text-transform: ;
- font-size: 30px;
- font-weight: 700;
- color: var(--blue);
+.logo a img {
+	width: auto;
+  	height: 48px; /* Adjust size as needed */
 }
 
 /* nav links */
 .links{
+	all: unset;
 	align-self: flex-start;
 }
 .links ul{
+	all: unset;
 	display: flex;
 	justify-content: center;
 	align-items:flex-start; 
 	
 }
 .links a{
+	all: unset;
 	color: var(--dark);
 	text-decoration: none;
 	font-weight: 600;

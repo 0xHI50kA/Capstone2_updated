@@ -3,7 +3,9 @@ let header = document.querySelector('.headin');
 function renderHeader(argument) {
 	header.innerHTML = `<!--logo-->
 	<div class="logo">
-		<a href="index.html"><i class="fa-solid fa-notes-medical"></i> SymptoAid</a>
+		<a href="index.html">
+			<img src="symplogo.png">
+		</a>
 	</div>
 	<!--nav links-->
 	<div class="links">
