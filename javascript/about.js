@@ -1,7 +1,7 @@
 let aboutPage = document.querySelector('.about');
 
 let about = {
-    abt: 'Atabs Health Care Center',
+    abt: 'Atab Health Care Center',
     firstP: `Here at Atab Health Center, we are dedicated to providing comprehensive and compassionate medical care tailored to support your overall well-being. Our doctor is committed to delivering the highest quality of service with professionalism and care. With expertise in various medical fields, we ensure that your healthcare needs are well managed with a patient-centered approach.`,
     contact: `(074) 420 9087 | atabhc2019@gmail.com`,
     schedule: {
@@ -33,7 +33,7 @@ let renderAbout = () => {
        
             <div >
             
-                <h1 style="text-align: center;font-size: 40px;font-family: Poppins,sans-serif;color: #333333;">${about.abt}</h1>
+                <p style=" font-weight:bold; text-align: center;font-size: 40px;font-family: Poppins,sans-serif;color: #333333;">${about.abt}</p>
                 <br>
                 <p  style="font-size: 25px;  class="abtDes">${about.firstP}</p>
                 <br>

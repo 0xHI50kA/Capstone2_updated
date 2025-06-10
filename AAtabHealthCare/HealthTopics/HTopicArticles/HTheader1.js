@@ -3,7 +3,9 @@ let header = document.querySelector('.headin');
 function renderHeader(argument) {
 	header.innerHTML = `<!--logo-->
 	<div class="logo">
-		<a href="../../index.html"><i class="fa-solid fa-notes-medical"></i> SymptoAid</a>
+		<a href="./index.html">
+			<img src="symplogo.png">
+		</a>
 	</div>
 	<!--nav links-->
 	<div class="links">
@@ -58,8 +60,8 @@ function renderHeader(argument) {
 </div>
 	
 	<div class="bars">
-    <i id="open" class="menu-icon">☰</i> <!-- Open Button (Hamburger) -->
-    <i id="close" class="menu-icon">✖</i> <!-- Close Button (X) -->
+    <p id="open" class="menu-icon">☰</p> <!-- Open Button (Hamburger) -->
+    <p id="close" class="menu-icon">✖</p> <!-- Close Button (X) -->
 </div>`;
 };
 

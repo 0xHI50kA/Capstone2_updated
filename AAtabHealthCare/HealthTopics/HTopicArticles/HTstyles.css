@@ -46,7 +46,6 @@ body{
 }
 
 header{
-	all: unset;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -65,31 +64,25 @@ header{
 /* logo styling */
 .logo{
 	position: relative;
-	z-index: ;
+	z-index: 1;
 }
 .logo a img {
-	width: auto;
-  	height: 48px; /* Adjust size as needed */
-}
-
-h1{
-	all: unset;
+	height: 48px;/* Adjust size as needed */
+	padding: 0px;
 	
 }
+
 /* nav links */
 .links{
-	all: unset;
 	align-self: flex-start;
 }
 .links ul{
-	all: unset;
 	display: flex;
 	justify-content: center;
 	align-items:flex-start; 
 	
 }
 .links a{
-	all: unset;
 	color: var(--dark);
 	text-decoration: none;
 	font-weight: 600;
@@ -219,6 +212,7 @@ h1{
 /*menu_bar*/
 
 .bars{
+	
 	height: 70px;
 	display: none;
 	align-self: flex-start;
@@ -873,7 +867,6 @@ box-shadow: 2px 2px 5px var(--light), -2px -2px 5px var(--light);
 .FAQ{
 	background: var(--white);
 	padding:10px 20px 60px 20px;
-	
 }
 .FaqH{
 	margin: 10px 0;
@@ -927,8 +920,16 @@ background: var(--blue);
 	color: var(--gray);
 	display: none;
 }
+.faqImg{
+padding-top:35px ;
+}
+.faqImg div {
+	/* background: var(--light);
+	border-radius: 10px; */
+	position: relative;
+	max-width: 400px;
 
-
+}
 /* .faqImg div{
 	transition: 1s;
 	background: var(--blue);
@@ -1192,7 +1193,6 @@ footer {
 	display: block;
 	position: relative;
 	z-index: 2;
-    
 }
 .logo a{
 	font-size: 20px;
@@ -1239,7 +1239,6 @@ footer {
 #close:hover {
     background: darkred;
 }
-
 /* Toggle Open/Close Buttons Using JavaScript */
 .hidden {
     display: none;

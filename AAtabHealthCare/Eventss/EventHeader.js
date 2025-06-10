@@ -18,8 +18,8 @@ function renderHeader(argument) {
 	</div>
 	<div class="acct" style="position: absolute; z-index: -1; backgroud-color:white;"></div>
 	<div class="bars">
-    <h1 id="open" class="menu-icon">☰</h1> <!-- Open Button (Hamburger) -->
-    <h1 id="close" class="menu-icon">✖</h1> <!-- Close Button (X) -->
+    <p id="open" class="menu-icon">☰</p> <!-- Open Button (Hamburger) -->
+    <p id="close" class="menu-icon">✖</p> <!-- Close Button (X) -->
 </div>`;
 };
 
