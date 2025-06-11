@@ -60,8 +60,8 @@ function renderHeader(argument) {
 </div>
 	
 	<div class="bars">
-    <i id="open" class="menu-icon">☰</i> <!-- Open Button (Hamburger) -->
-    <i id="close" class="menu-icon">✖</i> <!-- Close Button (X) -->
+    <p id="open" class="menu-icon">☰</p> <!-- Open Button (Hamburger) -->
+    <p id="close" class="menu-icon">✖</p> <!-- Close Button (X) -->
 </div>`;
 };
 

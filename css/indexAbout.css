@@ -1161,6 +1161,15 @@ footer {
     font-size: 16px;
     transition: background-color 0.2s ease; margin-left: 40px;
 }
+.responsive-heading{
+	font-weight:bold; text-align: center;font-size: 40px;font-family: Poppins,sans-serif;color: #333333;
+}
+ @media (max-width: 600px) {
+            .responsive-heading {
+            font-size: 24px !important;
+        }
+    }
+
 /*============ FOOTER END===========*/
 
 /*======== RESPONSIVENESS ======*/
