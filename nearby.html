@@ -27,6 +27,7 @@
 
         h1 {
             margin: 0;
+            margin-top:90px ; text-align: center;font-size: 40px;font-family: Poppins;color: #333333;
         }
 
         /* Back Button Styles */
@@ -103,6 +104,12 @@
             line-height: 1.5;
             color: #555;
         }
+        @media(max-width: 768px) {
+            h1{
+                font-size: 15px;
+                padding: 20px;
+            }
+        }
     </style>
 
   <!--=========== MY CSS LINK START =============-->
@@ -121,24 +128,13 @@
 <body>
     <!-- <a href="index.html" class="back-button" onclick="goBack()">Back</a> -->
     
-        <button style="
-        position: absolute;
-    padding: 10px 20px; 
-    margin-top: 90px;
-    background-color: #6c757d; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 16px;
-    transition: background-color 0.2s ease; margin-left: 40px;
-  " onclick="window.location.href='index.html'">← Back</button>
+    <button class="back" onclick="window.location.href='index.html'">← Back</button>
 
     <header class="headin">
 
 
     </header>
-    <h1 style="margin-top:90px ; text-align: center;font-size: 40px;font-family: Poppins;color: #333333;">Nearby HealthCare</h1>
+    <h1 >Nearby HealthCare</h1>
     <br>
     
     <main >

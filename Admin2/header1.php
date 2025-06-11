@@ -27,7 +27,7 @@
         <div class="header">
 			<div class="header-left">
 				<a href="dashboard.php" class="logo">
-					<img src="assets/img/logo.png" width="35" height="35" alt=""> <span>Atab's</span>
+					<img src="assets/img/logo.png" width="35" height="35" alt=""> <span>Atab HC</span>
 				</a>
 			</div>
 			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>

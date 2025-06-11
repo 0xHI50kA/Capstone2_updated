@@ -19,6 +19,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>FITNESS</title>
+	
 </head>
 <body>
 
@@ -31,7 +32,7 @@
 <!--============HEADER END============---->
 
 <main class="main immuneV">
-	<button style="
+	<button id="back" style="
 		margin-top: -10px;
 		padding: 10px 20px; 
 		background-color: #6c757d; 
@@ -157,5 +158,22 @@
 		});
 	});
 	</script>
+	<!-- resizer to Phone view -->
+	<script>
+  	function applyResponsiveStyle() {
+    const backBtn = document.getElementById('back');
+    if (window.innerWidth <= 768) {
+      backBtn.style.fontSize = '10px';
+      backBtn.style.marginTop = '0px';
+    } else {
+      backBtn.style.fontSize = '16px';
+      backBtn.style.marginTop = '-10px';
+    }
+  }
+
+  // Run on load and resize
+  window.addEventListener('load', applyResponsiveStyle);
+  window.addEventListener('resize', applyResponsiveStyle);
+</script>
 </body>
 </html>

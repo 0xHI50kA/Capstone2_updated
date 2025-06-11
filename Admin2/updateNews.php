@@ -87,6 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .page-wrapper {
+            margin-top: -20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -96,6 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .news-container {
+            margin-top: 9px;
             width: 90%;
             max-width: 1000px;
             background: white;

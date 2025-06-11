@@ -46,6 +46,7 @@ body{
 }
 
 header{
+	all: unset;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -55,7 +56,7 @@ header{
 	right: 0;
 	left: 0;
 	width: 100%;
-	padding:15px 5px ;
+	padding:15px 5px 15px;
 	background: var(--light);
 	/*box-shadow: 0 0 5px var(--white);*/
 	z-index: 999;
@@ -63,50 +64,49 @@ header{
 
 /* logo styling */
 .logo{
-	align-self: flex-start;
 	position: relative;
 	z-index: ;
 }
-.logo a{
- text-decoration: none;
- text-transform: ;
- font-size: 30px;
- font-weight: 700;
- color: var(--blue);
+.logo a img {
+	width: auto;
+  	height: 48px; /* Adjust size as needed */
 }
 
 /* nav links */
 .links{
+	all: unset;
 	align-self: flex-start;
 }
 .links ul{
+	all: unset;
 	display: flex;
 	justify-content: center;
 	align-items:flex-start; 
 	
 }
 .links a{
+	all: unset;
 	color: var(--dark);
 	text-decoration: none;
 	font-weight: 600;
 }
 
-.links ul .home1 a{
+/* .links ul .home1 a{
 	color: var(--blue);
 	text-decoration: none;
 	font-weight: 600;
-}
+} */
 
 /* .links ul .home2 a{
 	color: var(--blue);
 	text-decoration: none;
 	font-weight: 600;
-}
+} */
 .links ul .home3 a{
 	color: var(--blue);
 	text-decoration: none;
 	font-weight: 600;
-} */
+}
 
 .links ul li{
 	margin: 0 20px;
@@ -230,7 +230,6 @@ header{
 	color: var(--light);
 	font-weight: 800;
 }
-
 /*============ HEADER END ===========*/
 
 
@@ -291,10 +290,10 @@ font-weight: 550;
 	background: var(--blue);
 	border-radius: 100%;
 }
-/* .img:hover{
+.img:hover{
 	transition: 2s;
 		background: linear-gradient(var(--blue), var(--light),var(--light));
-} */
+}
 .img img{
 	width: 100%;
 	height: 400px;
@@ -302,10 +301,10 @@ font-weight: 550;
 	bottom: 0;
 
 }
-/* .img img:hover{
+.img img:hover{
 	transition: 1s;
 margin:0 20px ;
-} */
+}
 .serve{
 	position: absolute;
 	top: 0px;
@@ -472,14 +471,14 @@ margin: 20px;
 display: flex;
 	justify-content: center;
 }
-/* .abtImage:hover{
+.abtImage:hover{
 	transition: 1s;
 	background: var(--blue);
 	box-shadow: 2px 2px 4px var(--light), -5px -5px 0px var(--dark);
-} */
+}
 .abtImage img{
-	max-width: 600px;
-	max-height: 450px;
+	max-width: 350px;
+	max-height: 350px;
 }
 .group{
 	display: flex;
@@ -537,7 +536,7 @@ display: flex;
 	font-weight: 600;
 	color: var(--blue);
 	margin: 20px 0;
-	text-align: center;
+	
 }
 
 .desc{
@@ -568,7 +567,7 @@ display: flex;
 /*============ ABOUT CLASS END ===========*/
 
 
-/* ================BOOK APPOINTMENT START===========*/
+/*================BOOK APPOINTMENT START===========*/
 
 
 .aptH{
@@ -603,7 +602,7 @@ font-weight: bold;
 	margin-top: 0px;
 	position: relative;
 	z-index: 0 !important;
-	/* min-height: 500px; */
+	min-height: 500px;
 }
 .aptImage{
 background: var(--light);
@@ -612,10 +611,10 @@ margin: 20px;
 display: flex;
 	justify-content: flex-end;
 }
-/* .aptImage:hover{
+.aptImage:hover{
 	transition: 1s;
 	background: var(--blue);
-} */
+}
 .aptImage img{
 	max-width: 200px;
 	min-height: 350px;
@@ -776,7 +775,7 @@ border-radius: 10px;
 	transition: 1s;
 	color: red;
 }
-/*================BOOK APPOINTMENT END=========== */
+/*================BOOK APPOINTMENT END===========*/
 
 /*============ REVIEWS CLASS START===========*/
 
@@ -870,7 +869,6 @@ box-shadow: 2px 2px 5px var(--light), -2px -2px 5px var(--light);
 .FAQ{
 	background: var(--white);
 	padding:10px 20px 60px 20px;
-	
 }
 .FaqH{
 	margin: 10px 0;
@@ -888,7 +886,7 @@ box-shadow: 2px 2px 5px var(--light), -2px -2px 5px var(--light);
 }
 .faQ{
 	border-bottom: 1px solid var(--blue);
-	/*border-bottom: 1px solid var(--blue);*/
+	
 	padding: 5px;
 }
 
@@ -924,12 +922,20 @@ background: var(--blue);
 	color: var(--gray);
 	display: none;
 }
+.faqImg{
+padding-top:35px ;
+}
+.faqImg div {
+	background: var(--light);
+	border-radius: 10px;
+	position: relative;
+	max-width: 400px;
 
-
-/* .faqImg div{
+}
+.faqImg div{
 	transition: 1s;
 	background: var(--blue);
-} */
+}
 
 .faqImg div img{
 }
@@ -1145,201 +1151,222 @@ footer {
     display: block;
 }
 
-
+.back{
+	position: absolute;
+	padding: 10px 20px; 
+	margin-top: 90px;
+	margin-left: 40px;
+	background-color: #6c757d; 
+	color: white; 
+	border: none; 
+	border-radius: 5px; 
+	cursor: pointer; 
+	font-size: 16px;
+	transition: background-color 0.2s ease; 
+}
 /*============ FOOTER END===========*/
 
 /*======== RESPONSIVENESS ======*/
 
 @media(max-width: 768px) {
-
-
-/*nav links*/
-	.links {
-	display: block;
-	position: fixed;
-	top: 0;
-	left: -1000px;
-	transition: 1s;
-	justify-content: center;
-background: var(--light);
-color: var(--light);
-width: 100%;
-height: 100vh;
-	padding-top: 100px;
-		
+.back{
+	font-size: 10px;
+	margin-top: 100px;
 }
-.links > ul{
-	display: block;
-
+header{
+	padding:11px 5px 12px;
 }
-.links ul li {
-	display: block;
-	color: var(--dark);
-	margin: 20px 0;
-	font-size: 20px;
-}
-.cont a{
+	/*nav links*/
+		.links {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: -1000px;
+		transition: 1s;
+		justify-content: center;
+	background: var(--light);
 	color: var(--light);
-}
-.links div{
-	margin: 30px ;
-}
-
-.bars{
-	display: block;
-	position: relative;
-	z-index: 2;
-    
-}
-.logo a{
-	font-size: 20px;
-	font-weight: bold;
-}
-.ac{
-	font-size: 15px;
-}
-/* Hide Close Button Initially */
-#close {
-    display: none; 
-}
-
-/* Open Button Styles */
-#open {
-    font-size: 24px;
-    background: var(--light);
-
-    color: var(--dark);
-
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hover Effect for Open Button */
-#open:hover {
-    background: darkgray;
-}
-
-/* Close Button Styles (Initially Hidden) */
-#close {
-    font-size: 24px;
-    background: red;
-
-    color: white;
-
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hover Effect for Close Button */
-#close:hover {
-    background: darkred;
-}
-
-/* Toggle Open/Close Buttons Using JavaScript */
-.hidden {
-    display: none;
-}
-
-.well{
-	font-size: 30px;
-}
-.im{
-	font-size: 18px;
-}
-
-.teamlead, .slide{
-	padding: 0;
-}
-
-.aptImage img{
-	max-width: 150px;
-	min-height: 350px;
-}
-
-.aptC span{
-	font-size: 10px;
-}
-.aptSubH{
-	font-size: 15px;
-}
-.faqImg{
-	display: none;
-}
-
-
-.serve{
-	top: 100px;
-	padding:5px 10px;
-}
-.serve i{
-	font-size: 30px;
-}
-.two .s{
-	font-size: 10px;
-}
-.two .t{
-	font-size: 10px;
-}
-.heading .subheading{
-	font-size: 22px;
-}
-.booking{
-	display: flex;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-	position: fixed;
-/*	top: 25%;
-	left: 30%;*/
-}
-
-.footer-container {
-	grid-template-columns: 1fr; /* Stack elements vertically */
-	text-align: center;
-	gap: 15px;
-	padding: 20px;
-}
-
-.footer-logo h2 {
-	font-size: 22px;
-}
-
-.footer-links p,
-.footer-contact p,
-.footer-social p {
-	font-size: 16px;
-}
-
-.footer-links ul li a {
-	font-size: 18px;
-}
-
-.footer-contact i {
-	font-size: 18px;
-}
-
-.footer-social a {
-	font-size: 18px;
-}
-
-.subscribe form input {
-	font-size: 18px;
-	padding: 12px;
-}
-
-.subscribe form button {
-	font-size: 14px;
-	padding: 8px;
-}
-
-.copy p {
-	font-size: 15px;
-	margin: 10px;
-}
-
-.dev a {
-	font-size: 14px;
-}
-}
+	width: 100%;
+	height: 100vh;
+		padding-top: 100px;
+			
+	}
+	.links > ul{
+		display: block;
+	
+	}
+	.links ul li {
+		display: block;
+		color: var(--dark);
+		margin: 20px 0;
+		margin-left: 33px;
+		font-size: 20px;
+	}
+	.cont a{
+		color: var(--light);
+	}
+	.links div{
+		margin: 30px ;
+	}
+	
+	.bars{
+		display: block;
+		position: relative;
+		z-index: 2;
+		margin-bottom: 0px;
+	}
+	.logo a{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.ac{
+		font-size: 15px;
+	}
+	/* Hide Close Button Initially */
+	#close {
+		display: none; 
+	}
+	
+	/* Open Button Styles */
+	#open {
+		font-size: 24px;
+		background: var(--light);
+	
+		color: var(--dark);
+	
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 0.3s ease-in-out;
+	}
+	
+	/* Hover Effect for Open Button */
+	#open:hover {
+		background: darkgray;
+	}
+	
+	/* Close Button Styles (Initially Hidden) */
+	#close {
+		font-size: 24px;
+		background: red;
+	
+		color: white;
+	
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 0.3s ease-in-out;
+	}
+	
+	/* Hover Effect for Close Button */
+	#close:hover {
+		background: darkred;
+	}
+	
+	/* Toggle Open/Close Buttons Using JavaScript */
+	.hidden {
+		display: none;
+	}
+	
+	
+	.well{
+		font-size: 30px;
+	}
+	.im{
+		font-size: 18px;
+	}
+	
+	.teamlead, .slide{
+		padding: 0;
+	}
+	
+	.aptImage img{
+		max-width: 150px;
+		min-height: 350px;
+	}
+	
+	.aptC span{
+		font-size: 10px;
+	}
+	.aptSubH{
+		font-size: 15px;
+	}
+	.faqImg{
+		display: none;
+	}
+	
+	
+	.serve{
+		top: 100px;
+		padding:5px 10px;
+	}
+	.serve i{
+		font-size: 30px;
+	}
+	.two .s{
+		font-size: 10px;
+	}
+	.two .t{
+		font-size: 10px;
+	}
+	.heading .subheading{
+		font-size: 22px;
+	}
+	.booking{
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		position: fixed;
+	/*	top: 25%;
+		left: 30%;*/
+	}
+	
+	.footer-container {
+		grid-template-columns: 1fr; /* Stack elements vertically */
+		text-align: center;
+		gap: 15px;
+		padding: 20px;
+	}
+	
+	.footer-logo h2 {
+		font-size: 22px;
+	}
+	
+	.footer-links p,
+	.footer-contact p,
+	.footer-social p {
+		font-size: 16px;
+	}
+	
+	.footer-links ul li a {
+		font-size: 18px;
+	}
+	
+	.footer-contact i {
+		font-size: 18px;
+	}
+	
+	.footer-social a {
+		font-size: 18px;
+		
+	}
+	
+	.subscribe form input {
+		font-size: 18px;
+		padding: 12px;
+	}
+	
+	.subscribe form button {
+		font-size: 14px;
+		padding: 8px;
+	}
+	
+	.copy p {
+		font-size: 15px;
+		margin: 10px;
+	}
+	
+	.dev a {
+		font-size: 14px;
+	}
+	
+	}

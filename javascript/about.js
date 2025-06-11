@@ -33,7 +33,7 @@ let renderAbout = () => {
        
             <div >
             
-                <p style=" font-weight:bold; text-align: center;font-size: 40px;font-family: Poppins,sans-serif;color: #333333;">${about.abt}</p>
+                <p class"title" style=" font-weight:bold; text-align: center;font-size: 40px;font-family: Poppins,sans-serif;color: #333333;">${about.abt}</p>
                 <br>
                 <p  style="font-size: 25px;  class="abtDes">${about.firstP}</p>
                 <br>

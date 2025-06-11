@@ -29,6 +29,7 @@ include('includes/connection.php');
         }
 
         .page-wrapper {
+            margin-top: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -38,7 +39,7 @@ include('includes/connection.php');
         }
 
         .calendar-container {
-            width: 80%;
+            width: 90%;
             max-width: 1000px;
             background: white;
             padding: 20px;
@@ -76,9 +77,10 @@ include('includes/connection.php');
 </head>
 
 <body>
-<br><br>
+
     <div class="page-wrapper">
-        <h1>Google Calendar Update</h1>
+        <h1>Update Calendar</h1>
+        <br>
         <div class="calendar-container">
             <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id@gmail.com&ctz=America/New_York" 
                 frameborder="0"></iframe>
