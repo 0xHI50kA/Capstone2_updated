@@ -1154,7 +1154,9 @@ footer {
 /*======== RESPONSIVENESS ======*/
 
 @media(max-width: 768px) {
-
+/* header{
+	padding:11px 5px 12px;
+} */
 
 /*nav links*/
 	.links {

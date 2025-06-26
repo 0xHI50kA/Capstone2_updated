@@ -1245,7 +1245,7 @@ footer {
 	#close {
 		font-size: 24px;
 		background: red;
-	
+		padding: 1px;
 		color: white;
 	
 		cursor: pointer;

@@ -468,7 +468,7 @@ footer {
 	margin-top: 100px;
 }
 header{
-	padding:15px 5px 8px;
+	padding:15px 0px 9px 5px;
 }
 /*nav links*/
 	.links {
@@ -540,7 +540,8 @@ height: 100vh;
 	#close {
 		font-size: 24px;
 		background: red;
-		color: black;
+		padding: 1px;
+		color: white;
 		cursor: pointer;
 		border-radius: 5px;
 		transition: all 0.3s ease-in-out;
