@@ -43,10 +43,7 @@
 	font-weight: bold;
 }
 
-.abtDes{
-	font-size: 17px;
-	color: var(--dark);
-}
+
 .abtPics{
 	display: flex;
 	justify-content: center;
@@ -82,4 +79,31 @@ a{
 
 .status.closed {
     color: red;
+}
+.abtContact{
+	font-size: 25px;
+}
+.abtSchedule{
+	font-size: 25px;
+}
+.abtDes{
+	font-size: 25px;
+	color: var(--dark);
+	text-align: left;
+	text-indent: 50px;
+}
+span {
+	color:black;
+	font-weight:bold;
+}
+@media(max-width: 768px) {
+	.abtContact{
+	font-size: 20px;
+	}
+	.abtSchedule{
+		font-size: 20px;
+	}
+	.abtDes{
+		font-size: 20px;
+	}
 }

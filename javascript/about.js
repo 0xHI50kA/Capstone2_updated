@@ -2,8 +2,8 @@ let aboutPage = document.querySelector('.about');
 
 let about = {
     abt: 'Atab Health Care Center',
-    firstP: `Here at Atab Health Center, we are dedicated to providing comprehensive and compassionate medical care tailored to support your overall well-being. Our doctor is committed to delivering the highest quality of service with professionalism and care. With expertise in various medical fields, we ensure that your healthcare needs are well managed with a patient-centered approach.`,
-    contact: `(074) 420 9087 | atabhc2019@gmail.com`,
+    firstP: `Atab Health Care Center is committed to providing comprehensive, compassionate medical care that supports the overall well-being of the community. The health center’s dedicated doctor delivers top-quality healthcare with professionalism, expertise, and genuine concern. With a strong focus on patient-centered service, Atab Health Care Center ensures every individual's health needs are met with the utmost attention and care.`,
+    contact: `📞(074) 420 9087 |📧 atabhc2019@gmail.com`,
     schedule: {
         openTime: '07:45',
         closeTime: '17:00',
@@ -34,12 +34,12 @@ let renderAbout = () => {
             <div >
                 <p class"responsive-heading" style=" font-weight:bold; text-align: center;font-size: 40px;font-family: Poppins,sans-serif;color: #333333;">${about.abt}</p>
                 <br>
-                <p  style="font-size: 25px;  class="abtDes">${about.firstP}</p>
+                <p  class="abtDes" >${about.firstP}</p>
                 <br>
-                <p   style="font-size: 25px; class="abtContact"> <span style="color:black;font-weight:bold;">Contact:</span> ${about.contact}</p>
-                <p  style="font-size: 25px; class="abtSchedule">
-                    <span style="color:black;font-weight:bold;"> Operating Hours:</span> 7:45 AM - 5:00 PM <br> 
-                   <span style="color:black;font-weight:bold;"> Current Status: </span> ${getBusinessStatus()}
+                <p   class="abtContact"> <span style="color:black;font-weight:bold;">Contact:</span> ${about.contact}</p>
+                <p  class="abtSchedule">
+                    <span > Operating Hours:</span>🕒 7:45 AM - 5:00 PM <br> 
+                   <span > Current Status: </span> ${getBusinessStatus()}
                 </p>
                 <!-- <div class="abtSoc">
                     <a href="https://www.facebook.com/profile.php?id=100068242016400" target="_blank" class="socIcon">

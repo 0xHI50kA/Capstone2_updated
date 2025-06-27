@@ -1164,6 +1164,10 @@ footer {
 .responsive-heading{
 	font-weight:bold; text-align: center;font-size: 40px;font-family: Poppins,sans-serif;color: #333333;
 }
+.abtDes{
+		font-size: 25px;
+		
+	}
  @media (max-width: 600px) {
             .responsive-heading {
             font-size: 24px !important;
@@ -1369,4 +1373,5 @@ footer {
 .dev a {
 	font-size: 14px;
 }
+
 }
