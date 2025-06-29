@@ -6,6 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Symptoms Checker</title>
   <style>
+    #loadingModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading-content {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        opacity: 0;
+        animation: fadeInOut 5s forwards;
+    }
+
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { opacity: 0; }
+    }
 
     /* Main container */
     .main-container {
@@ -264,9 +293,9 @@ transition: background-color 0.2s ease; margin-left: 40px;
       buttonContainer.appendChild(noButton);
     }
 
-    function handleResponse(response) {
+   function handleResponse(response) {
   displayMessage(`You: ${response}`, false);
-  lastAnswer = response; // Track the user's response
+  lastAnswer = response;
 
   showBotTyping();
   setTimeout(() => {
@@ -275,18 +304,23 @@ transition: background-color 0.2s ease; margin-left: 40px;
       displayMessage(questions[questionIndex]);
       renderResponseButtons();
     } else {
-      // End of questions - Hide buttons and analyze
+      // End of questions - Show loading modal and analyze
       const buttonContainer = document.getElementById("buttonContainer");
-      buttonContainer.innerHTML = ""; // Hide the Yes/No buttons
+      buttonContainer.innerHTML = "";
 
-      displayMessage("Analyzing your responses...");
+      // Show modal
+      const modal = document.getElementById("loadingModal");
+      modal.style.display = "flex";
+
+      // Redirect after 5s when modal animation ends
       setTimeout(() => {
+        modal.style.display = "none";
         if (lastAnswer === "Yes") {
-          window.location.href = "resultc1.html"; // Redirect to "Yes" result page
+          window.location.href = "resultc1.html";
         } else {
-          window.location.href = "resultc2.html"; // Redirect to "No" result page
+          window.location.href = "resultc2.html";
         }
-      }, 3000); // 3-second delay
+      }, 5000);
     }
   }, 1000);
 }
@@ -334,6 +368,13 @@ transition: background-color 0.2s ease; margin-left: 40px;
             });
         });
         </script>
+
+        <!-- Loading Modal -->
+        <div id="loadingModal">
+            <div class="loading-content">
+                <p>🔍 Analyzing...</p>
+            </div>
+        </div>
 </body>
 
 </html>

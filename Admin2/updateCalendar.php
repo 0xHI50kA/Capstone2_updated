@@ -79,13 +79,13 @@ include('includes/connection.php');
 <body>
 
     <div class="page-wrapper">
-        <h1>Update Calendar</h1>
+        <h1>Event Calendar</h1>
         <br>
         <div class="calendar-container">
             <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id@gmail.com&ctz=America/New_York" 
                 frameborder="0"></iframe>
             <div class="admin-actions">
-                <h3>Admin Actions</h3>
+                <h3>Update Calendar</h3>
                 <button onclick="signInWithGoogle()">Sign In to Google</button>
             </div>
         </div>

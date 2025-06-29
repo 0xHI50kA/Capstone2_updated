@@ -227,8 +227,8 @@ include('includes/connection.php');
     <div class="page-wrapper">
     <h1>Dashboard</h1>
     <div class="dashboard">
-        <div class="card" onclick="window.location.href='updateNews.php'">
-            <h1>Update News</h1>
+        <div class="card" onclick="window.location.href='crud.php'">
+            <h1>Manage News</h1>
             <img src="../Admin2/images/news1.jpg" alt="News Icon">
             <div class="content">
                 <p>Latest news to be uploaded here.</p>
@@ -236,7 +236,7 @@ include('includes/connection.php');
         </div>
         <div class="card" onclick="window.location.href='updateCalendar.php'">
 
-            <h1>Update Calendar</h1>
+            <h1>Manage Calendar</h1>
             <img src="../Admin2/images/CalendarImage.jpg" alt="News Icon">
             <div class="content">
                 <p>Upcoming events to be edited here.</p>

@@ -6,7 +6,6 @@ if (empty($_SESSION['name'])) {
 }
 
 include('header2.php');
-include('includes/connection.php');
 
 // Database connection
 $host = "localhost";
@@ -17,18 +16,14 @@ $password = "";
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Create the news table if not exists
-    $createTableSQL = "
+    $pdo->exec("
         CREATE TABLE IF NOT EXISTS news (
             id INT AUTO_INCREMENT PRIMARY KEY,
             title VARCHAR(255) NOT NULL,
             content TEXT NOT NULL,
             image VARCHAR(255) NOT NULL
-        );
-    ";
-    $pdo->exec($createTableSQL);
-
+        )
+    ");
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
@@ -38,21 +33,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST["title"];
     $content = $_POST["content"];
 
-    // File upload handling
-    $targetDir = "uploads/"; // Directory to save images
-
-    // Create 'uploads' folder if it doesn't exist
+    $targetDir = "uploads/";
     if (!file_exists($targetDir)) {
         mkdir($targetDir, 0777, true);
     }
 
-    // Generate a unique filename to prevent overwrites
     $imageName = time() . "_" . basename($_FILES["image"]["name"]);
     $targetFile = $targetDir . $imageName;
 
-    // Validate file upload
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-        // Insert data into the database
         $sql = "INSERT INTO news (title, content, image) VALUES (:title, :content, :image)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(":title", $title);
@@ -60,7 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(":image", $imageName);
 
         if ($stmt->execute()) {
-            $successMessage = "News report added successfully!";
+            echo "<script>
+                setTimeout(function(){ window.location.href = 'crud.php'; }, 00);
+            </script>";
         } else {
             $errorMessage = "Failed to add news report.";
         }
@@ -70,18 +61,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-    
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Reports</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
@@ -136,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             resize: vertical;
         }
 
-        button {
+        .btn-primary {
             padding: 12px;
             font-size: 16px;
             background-color: #007bff;
@@ -147,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             transition: 0.3s;
         }
 
-        button:hover {
+        .btn-primary:hover {
             background-color: #0056b3;
         }
 
@@ -160,67 +147,154 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             max-width: 100%;
             max-height: 300px;
             border-radius: 5px;
-            display: none; /* Hidden until an image is selected */
+            display: none;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Modal */
+        #confirmModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 300px;
+        }
+
+        #modalForm button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #modalForm .confirm {
+            background-color: green;
+            color: white;
+        }
+
+        #modalForm .cancel {
+            background-color: gray;
+            color: white;
+        }
+
+        #successMessage {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
         }
     </style>
 </head>
-
 <body>
 
-    <div class="page-wrapper">
-        <h1>Add News Report</h1>
-        <div class="news-container">
-            <?php if (!empty($errorMessage)) echo "<p style='color: red;'>$errorMessage</p>"; ?>
-            <?php if (!empty($successMessage)) echo "<p style='color: green;'>$successMessage</p>"; ?>
+<div class="page-wrapper">
+    <h1>Add News Report</h1>
+    <div class="news-container">
+        <?php if (!empty($errorMessage)) echo "<p class='error'>$errorMessage</p>"; ?>
+        <?php if (!empty($successMessage)) echo "<p class='success'>$successMessage</p>"; ?>
 
-            <form method="POST" action="" enctype="multipart/form-data">
-                <div>
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" required>
-                </div>
+        <form id="newsForm" method="POST" action="" enctype="multipart/form-data">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
 
-                <div>
-                    <label for="content">Content:</label>
-                    <textarea id="content" name="content" rows="8" required></textarea>
-                </div>
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="8" required></textarea>
 
-                <div>
-                    <label for="image">Upload Image:</label>
-                    <input type="file" id="image" name="image" accept="image/*"  onchange="previewImage(event)">
-                </div>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)" required>
 
-                <!-- Image Preview -->
-                <div class="image-preview">
-                    <img id="preview" alt="Image Preview">
-                </div>
-
-                <div>
-                    <button type="submit">Submit Update</button>
-                </div>
-            </form>
-        </div>
+            <div class="image-preview">
+                <img id="preview" alt="Image Preview">
+            </div>
+            <div style="display: flex; gap: 10px;">
+    <button type="button" class="btn-primary" onclick="openModal()">Submit</button>
+    <a href="crud.php" class="btn-secondary" style="text-decoration: none; padding: 12px 20px; background-color: #6c757d; color: white; border-radius: 5px; text-align: center;">Back</a>
+</div>
+                
+        </form>
     </div>
+</div>
 
-    <script>
-        function previewImage(event) {
-            const preview = document.getElementById("preview");
-            const file = event.target.files[0];
+<!-- Submission Confirmation Modal -->
+<div id="confirmModal">
+    <div class="modal-content">
+        <h2 id="modalTitle">📌 Confirm Submission</h2>
+        <p id="modalMessage">Are you sure you want to add this news post?</p>
 
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function () {
-                    preview.src = reader.result;
-                    preview.style.display = "block";
-                }
-                reader.readAsDataURL(file);
-            } else {
-                preview.src = "";
-                preview.style.display = "none";
-            }
+        <div id="modalForm">
+            <button type="button" class="confirm" onclick="confirmSubmit()">Yes, Submit</button>
+            <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+        </div>
+
+        <div id="successMessage">✅ News added successfully!</div>
+    </div>
+</div>
+
+<script>
+    function previewImage(event) {
+        const preview = document.getElementById("preview");
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                preview.src = reader.result;
+                preview.style.display = "block";
+            };
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+            preview.style.display = "none";
         }
-    </script>
+    }
+
+    function openModal() {
+        document.getElementById('confirmModal').style.display = 'flex';
+        document.getElementById('modalForm').style.display = 'block';
+        document.getElementById('successMessage').style.display = 'none';
+    }
+
+    function closeModal() {
+        document.getElementById('confirmModal').style.display = 'none';
+    }
+
+    function confirmSubmit() {
+        // Hide confirm buttons and show success message
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalMessage').style.display = 'none';
+        document.getElementById('modalTitle').innerText = '✅ Added Succcessfully!';
+        document.getElementById('successMessage').style.display = 'block';
+
+        // Submit form after delay
+        setTimeout(() => {
+            document.getElementById('newsForm').submit();
+        }, 1500);
+    }
+</script>
 
 </body>
- <?php 
- include('footer.php');
-?>
+<?php include('footer.php'); ?>
+</html>

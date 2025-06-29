@@ -35,13 +35,7 @@ try {
      <link rel="stylesheet" href="css/styles.css">
         <!--============ FONT AWESOME CSS LINK END ============-->
     <style>
-        body {
-            font-family: 'Times New Roman', serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+       
 
 
     .news-container {
@@ -108,6 +102,7 @@ try {
         }
 
         .modal-content {
+            text-align: center;
             background-color: white;
             margin: 10% auto;
             padding: 20px;
@@ -127,6 +122,7 @@ try {
         }
         h1{
             margin-top: 100px;
+            text-align: center;
         }
         .close:hover {
             color: red;
@@ -135,26 +131,26 @@ try {
         @media (max-width: 768px) {
             .news-container {
                 grid-template-columns: 1fr; /* Single column for mobile */
+                
             }
 
             .modal-content {
                 width: 90%;
+                margin-top: 100px;
             }
         }
     </style>
     <link rel="stylesheet" type="text/css" href="../css/index1.css">
 </head>
 
-     <!-- Back Button -->
-    
-
-           <!-- Header Section -->
-    <header class="headin">
+<button class="back"  onclick="window.location.href='../index.html'">← Back</button>
+    <body>
+        
+        <header class="headin">
 
 
 </header>
-        
-    <h1 >📰 Latest Health News From Atabs Health Care Center</h1>
+        <h1 >📰 Latest Health News From Atabs Health Care Center</h1>
 
     <div class="news-container">
     <?php if (!empty($newsItems) && count($newsItems) > 0): ?>
@@ -164,6 +160,7 @@ try {
                 <h3><?php echo htmlspecialchars($news['title']); ?></h3>
                 <p><?php echo htmlspecialchars(substr($news['content'], 0, 80)) . '...'; ?></p>
             </div>
+            
         <?php endforeach; ?>
     <?php else: ?>
         <p>No news reports found.</p>
@@ -180,6 +177,8 @@ try {
             <img id="modalImage" src="" alt="News Image" style="width:100%; max-height:100%; object-fit:cover; border-radius:5px;">
         </div>
     </div>
+    </body>
+    
   <!--================= FOOTER START ==================-->
 <footer>
     <div class="footer-container">
@@ -192,11 +191,11 @@ try {
             <p class="footheader" style="font-weight: bold;font-size: 25px;">Important Links</p>
             <ul>
                 <!-- <li ><a href="../../index.html">Home</a></li> -->
-                <li ><a href="/Admin2/news-report.php">News</a></li>
+                <li ><a href="/AtabsHealthCare10/Admin2/news-report.php">News</a></li>
                 <li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
                 <!-- <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li> -->
 				<li ><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
-				<li ><a href="/nearby.html">Nearby Healthcare</a></li>
+				<li ><a href="/AtabsHealthCare10/nearby.html">Nearby Healthcare</a></li>
             </ul>
         </div>
 

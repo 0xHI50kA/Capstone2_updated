@@ -8,19 +8,15 @@
   <style>
 
     /* Main container */
-    .main-container {
+      .main-container {
       margin: auto;
       width: 800px;
-            /* margin-top: 50px; */
-      background: white;
-      /* width: 450px; */
+      background-color: #f5f5f5; /* light black / soft gray */
       height: 500px;
-      border-radius: 8px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-      /* display: flex; */
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 10px;
+      box-shadow: 0px 4px 12px rgba(33, 33, 33, 0.3); /* deeper soft black shadow */
+      border: 2px solid lightslategray; /* darker gray border */
+      padding: 25px;
+      border-radius: 10px;
     }
 
     /* Chatbox */
@@ -28,13 +24,14 @@
       font-size: 20px;
       flex-grow: 1;
       height: 65%;
-      border: 1px solid #ddd;
+      border: 1px solid lightslategray;
       overflow-y: auto;
       padding: 15px;
       background-color: #f8f9fa;
       margin-bottom: 15px;
       border-radius: 5px;
     }
+
 
     /* Typing indicator */
     #botTyping {
@@ -77,6 +74,35 @@
     .response-button:hover {
       opacity: 0.9;
     }
+            #loadingModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading-content {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        opacity: 0;
+        animation: fadeInOut 5s forwards;
+    }
+
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { opacity: 0; }
+    }
     @media screen and (max-width: 768px) {
     #chatbox {
         font-size: 18px; /* Slightly reduce font size for better fitting */
@@ -99,6 +125,12 @@
 </head>
 
 <body>
+       <!-- Loading Modal -->
+        <div id="loadingModal">
+            <div class="loading-content">
+                <p>🔍 Analyzing...</p>
+            </div>
+        </div>
   <button class="back"  onclick="window.location.href='me2.html'">← Back</button>
   <!-- <header>
     <div class="logo">
@@ -185,22 +217,32 @@
 <!--================= FOOTER END ==================-->
   
   <script>
-    let yesCount = 0;
-    let questionIndex = 0;
-    const questions = [
-      "Do you have a fever higher than 100°F (37.8°C)?",
-      "Have you experienced chills along with your fever?",
-      "Do you have body aches or muscle pain?",
-      "Are you experiencing fatigue or weakness?",
-      "Do you have a headache along with your fever?",
-      "Have you experienced sweating at night?",
-      "Do you have a sore throat?",
-      "Are you experiencing a cough along with your fever?",
-      "Have you had difficulty breathing recently?",
-      "Do you have a recent history of exposure to someone with COVID-19 or other infectious diseases?",
-      "Do you experience nausea or vomiting with your fever?",
-      "Have you noticed unexplained rashes along with your fever?"
-    ];
+let questionIndex = 0;
+let severityCount = {
+  mild: 0,
+  persistent: 0,
+  urgent: 0
+};
+
+const questions = [
+  // Mild symptoms first
+  { text: "Have you experienced chills along with your fever?", level: "mild" },
+  { text: "Do you have body aches or muscle pain?", level: "mild" },
+  { text: "Are you experiencing fatigue or weakness?", level: "mild" },
+  { text: "Do you have a headache along with your fever?", level: "mild" },
+  { text: "Do you have a sore throat?", level: "mild" },
+
+  // Persistent symptoms next
+  { text: "Do you have a fever higher than 100°F (37.8°C)?", level: "persistent" },
+  { text: "Have you experienced sweating at night?", level: "persistent" },
+  { text: "Are you experiencing a cough along with your fever?", level: "persistent" },
+  { text: "Do you have a recent history of exposure to someone with COVID-19 or other infectious diseases?", level: "persistent" },
+  { text: "Do you experience nausea or vomiting with your fever?", level: "persistent" },
+
+  // Urgent symptoms last
+  { text: "Have you had difficulty breathing recently?", level: "urgent" },
+  { text: "Have you noticed unexplained rashes along with your fever?", level: "urgent" }
+];
 
     let lastAnswer = null; // Track the last response
 
@@ -258,40 +300,52 @@
 
     
    // Handle user response
-  function handleResponse(response) {
-    displayMessage(`You: ${response}`, false);
+ function handleResponse(response) {
+  displayMessage(`You: ${response}`, false);
 
-    if (response === "Yes") {
-      yesCount++;
-    }
+  const currentQuestion = questions[questionIndex];
 
-    showBotTyping();
-    setTimeout(() => {
-      if (questionIndex < questions.length - 1) {
-        questionIndex++;
-        displayMessage(questions[questionIndex]);
-        renderResponseButtons();
-      } else {
-        document.getElementById("buttonContainer").innerHTML = ""; // Hide buttons
-
-        displayMessage("Analyzing your responses...");
-        setTimeout(() => {
-          console.log("Final Yes Count:", yesCount);
-          let resultPage = "";
-          // Redirect based on yesCount
-          if (yesCount >= 10) {
-            window.location.href = "resultf3.html";
-          } else if (yesCount >= 7) {
-            window.location.href = "resultf2.html";
-          } else if (yesCount >= 4) {
-            window.location.href = "resultf1.html";
-          } else {
-            window.location.href = "resultf0.html"; // Optional: result for very low risk
-          }
-        }, 3000);
-      }
-    }, 1000);
+  if (response === "Yes") {
+    severityCount[currentQuestion.level]++;
   }
+
+  showBotTyping();
+
+  setTimeout(() => {
+    if (questionIndex < questions.length - 1) {
+      questionIndex++;
+      displayMessage(questions[questionIndex].text);
+      renderResponseButtons();
+    } else {
+      document.getElementById("buttonContainer").innerHTML = "";
+
+      const modal = document.getElementById("loadingModal");
+      modal.style.display = "flex";
+
+      setTimeout(() => {
+        modal.style.display = "none";
+
+        // Calculate total "Yes" responses
+        const totalYes = severityCount.mild + severityCount.persistent + severityCount.urgent;
+
+        console.log("Final Severity Count:", severityCount);
+        let resultPage = "";
+
+        if (severityCount.urgent > 0 || totalYes >= 9) {
+          resultPage = "resultf3.html"; // 🔴 Urgent
+        } else if (severityCount.persistent > 0) {
+          resultPage = "resultf2.html"; // 🟠 Persistent
+        } else if (severityCount.mild > 0) {
+          resultPage = "resultf1.html"; // 🟢 Mild
+        } else {
+          resultPage = "resultf0.html"; // ✅ No concerning symptoms
+        }
+
+        window.location.href = resultPage;
+      }, 5000);
+    }
+  }, 1000);
+}
 
 
     // Simulate initial bot messages and render buttons
@@ -308,7 +362,7 @@
           );
 
           setTimeout(() => {
-            displayMessage(questions[questionIndex]);
+            displayMessage(questions[questionIndex].text);
             renderResponseButtons();
           }, 1000);
         }, 1500);

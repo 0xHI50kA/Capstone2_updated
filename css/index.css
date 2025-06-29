@@ -1166,21 +1166,22 @@ footer {
 	left: -1000px;
 	transition: 1s;
 	justify-content: center;
-	background: var(--light);
-	color: var(--light);
-	width: 100%;
-	height: 100vh;
+background: var(--light);
+color: var(--light);
+width: 100%;
+height: 100vh;
 	padding-top: 100px;
 		
 }
 .links > ul{
 	display: block;
-	margin-left: 38px;
+
 }
 .links ul li {
 	display: block;
 	color: var(--dark);
 	margin: 20px 0;
+	margin-left: 33px;
 	font-size: 20px;
 }
 .cont a{

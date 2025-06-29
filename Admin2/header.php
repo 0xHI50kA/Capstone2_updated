@@ -88,10 +88,10 @@
                             <a href="employees.php"><i class="fa fa-user"></i> <span>Employees</span></a>
                         </li> -->
                         <li>
-                            <a href="updateCalendar.php"><i class="fa fa-calendar"></i> <span>Update Event Calendar</span></a>
+                            <a href="updateCalendar.php"><i class="fa fa-calendar"></i> <span>Event Calendar</span></a>
                         </li>
                         <li>
-                            <a href="updateNews.php"><i class="fa fa-newspaper"></i></i><span>Update news</span></a>
+                            <a href="crud.php"><i class="fa fa-newspaper"></i></i><span>News</span></a>
                         </li>
                         
 												                       

@@ -1149,41 +1149,55 @@ footer {
 .back-to-top.show {
     display: block;
 }
-
+.back{
+	position: absolute;
+	padding: 10px 20px; 
+	margin-top: 90px;
+	background-color: #6c757d; 
+	color: white; 
+	border: none; 
+	border-radius: 5px; 
+	cursor: pointer; 
+	font-size: 16px;
+	transition: background-color 0.2s ease; margin-left: 40px;
+}
 
 /*============ FOOTER END===========*/
 
 /*======== RESPONSIVENESS ======*/
 
 @media(max-width: 768px) {
+.back{
+	font-size: 10px;
+	margin-top: 100px;
+}
+/*nav links*/
+	.links {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: -1000px;
+	transition: 1s;
+	justify-content: center;
+background: var(--light);
+color: var(--light);
+width: 100%;
+height: 100vh;
+	padding-top: 100px;
+		
+}
+.links > ul{
+	display: block;
 
-
-	/*nav links*/
-		.links {
-		display: block;
-		position: fixed;
-		top: 0;
-		left: -1000px;
-		transition: 1s;
-		justify-content: center;
-	background: var(--light);
-	color: var(--light);
-	width: 100%;
-	height: 100vh;
-		padding-top: 100px;
-			
-	}
-	.links > ul{
-		display: block;
-	
-	}
-	.links ul li {
-		display: block;
-		color: var(--dark);
-		margin: 20px 0;
-		margin-left: 33px;
-		font-size: 20px;
-	}
+}
+.links ul li {
+	display: block;
+	color: var(--dark);
+	margin: 20px 0;
+	margin-left: 33px;
+	font-size: 20px;
+	text-align: left;
+}
 	.cont a{
 		color: var(--light);
 	}
