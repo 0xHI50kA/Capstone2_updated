@@ -215,21 +215,30 @@
 
 <!--================= FOOTER END ==================-->
   <script>
-    let yesCount = 0;
-    let questionIndex = 0;
-    const questions = [
-      "Do you experience muscle pain after physical activity?",
-      "Is your muscle pain constant, even when at rest?",
-      "Do you feel stiffness in your muscles after waking up?",
-      "Have you experienced recent trauma or injury to the muscles?",
-      "Do you have swelling in the area of the muscle pain?",
-      "Do you experience muscle weakness along with the pain?",
-      "Have you noticed unexplained weight loss along with persistent muscle pain?",
-      "Are you experiencing joint pain in addition to your muscle pain?",
-      "Is your muscle pain associated with a fever?",
-      "Do you take any medications that might be causing side effects related to muscle pain?"
-    ];
+  let questionIndex = 0;
+let severityCount = {
+  mild: 0,
+  persistent: 0,
+  urgent: 0
+};
 
+const questions = [
+  // 🔹 Mild Symptoms
+  { text: "Do you experience muscle pain after physical activity?", level: "mild" },
+  { text: "Do you feel stiffness in your muscles after waking up?", level: "mild" },
+  { text: "Do you take any medications that might be causing side effects related to muscle pain?", level: "mild" },
+
+  // 🔸 Persistent Symptoms
+  { text: "Is your muscle pain constant, even when at rest?", level: "persistent" },
+  { text: "Do you experience muscle weakness along with the pain?", level: "persistent" },
+  { text: "Are you experiencing joint pain in addition to your muscle pain?", level: "persistent" },
+
+  // 🔴 Urgent Symptoms
+  { text: "Have you experienced recent trauma or injury to the muscles?", level: "urgent" },
+  { text: "Do you have swelling in the area of the muscle pain?", level: "urgent" },
+  { text: "Have you noticed unexplained weight loss along with persistent muscle pain?", level: "urgent" },
+  { text: "Is your muscle pain associated with a fever?", level: "urgent" }
+];
     let lastAnswer = null; // Track the last response
 
     // Display bot's message
@@ -346,7 +355,7 @@
           );
 
           setTimeout(() => {
-            displayMessage(questions[questionIndex]);
+            displayMessage(questions[questionIndex].text);
             renderResponseButtons();
           }, 1000);
         }, 1500);

@@ -318,7 +318,7 @@ function handleResponse(response) {
         console.log("Final Severity Count:", severityCount);
         let resultPage = "";
 
-        if (severityCount.urgent > 0 || totalYes >= 9) {
+        if (severityCount.urgent > 0 ) {
           resultPage = "resultc3.html"; // 🔴 Urgent
         } else if (severityCount.persistent > 0) {
           resultPage = "resultc2.html"; // 🟠 Persistent
