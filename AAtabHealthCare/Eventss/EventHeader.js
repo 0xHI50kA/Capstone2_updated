@@ -3,7 +3,7 @@ let header = document.querySelector('.headin');
 function renderHeader(argument) {
 	header.innerHTML = `<!--logo-->
 	<div class="logo">
-		<a href="./index.html">
+		<a href="../../index.html">
 			<img src="symplogo.png">
 		</a>
 	</div>
