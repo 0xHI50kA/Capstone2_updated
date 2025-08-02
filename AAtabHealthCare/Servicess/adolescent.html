@@ -44,35 +44,42 @@
 		transition: background-color 0.2s ease;
 	  " onclick="window.location.href='services.html'">← Back</button>
 
-	<!--=====PATIENT FORM START=======-->
-	<div class="patientForm">
-	</div>
-<!--=====PATIENT FORM END=====-->
+<?php
+// Sample service data (this could come from DB in real case)
+$immHeading = 'Adolescense Consultation';
+$immContent = '
+We provide comprehensive services to support your well-being:
 
-<!--=====PATIENT FORM REGISTRATION STATUS START=======-->
-	<div class="patientFormReg">
-		<div class="patientFormRegStatSuccess">
-			<div class="text-center suceed">
-				<i id="suc" class="fa-solid fa-circle-check"></i>
-			
-			</div>
+<br>👵 Adolescense Consultations - Addressing age-related health concerns and promoting a vibrant, active lifestyle for elderly individuals.
+<br>
+<br>📆 <span style="color:black;font-weight:bold;">When:</span> Every Wednesday
+<br>⏰<span style="color:black;font-weight:bold;">Time:</span> 12:00 NN - 5:00 PM
+<br>
+<br>✅ No appointment needed!
+<br><br>
+Your journey to health and peace of mind starts here.
+';
 
-			<p class="sta">Booking Successful</p>
-			
-		</div>
-	</div>
-	<div class="patientFormReg">
-		<div class="patientFormRegStatFailed">
-			<div class="text-center failure">
-					<i id="unsuc" class="fa-regular fa-x"></i>
-			
-			</div>
+$immImage = '../Images/adolescence.jpg';
+?>
 
-			<p class="sta">Invalid Patients Details</p>
-			
-		</div>
-	</div>
-<!--=====PATIENT FORM REGISTRATION STATUS END=====-->
+<!-- ✅ HTML OUTPUT -->
+<div>
+    <div class="row imm">
+        <div class="immT col-lg-5 col-md-6 col-sm-12 animate">
+            <div class="topV">
+                <p style="font-size: 40px;"><?= $immHeading ?></p>
+            </div>
+            <p style="font-size: 25px;"><?= $immContent ?></p>
+            <a href="../../about.html" style="display: inline-block; padding: 10px 20px; color: white; background-color: #0078d7; text-decoration: none; border-radius: 5px; text-align: center;">Visit Us</a>
+        </div>
+        <div class="immI col-lg-5 col-md-6 col-sm-12 animate">
+            <img src="<?= $immImage ?>" class="img-fluid" alt="Immunisation Image">
+        </div>
+    </div>
+</div>
+
+
 
 	
 </main>
@@ -80,7 +87,7 @@
 <footer>
     <div class="footer-container">
         <div class="footer-logo">
-            <p><img src="/symplogo.png" alt="logo image" width="180px"></p>
+            <p ><img src="./symplogo.png" alt="logo image" style="width:180px; height:37px"  ></p>
             <p style="font-size: 20px;">SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance.</p>
         </div>
 
@@ -137,7 +144,7 @@
 
 
 <script type="text/javascript" src="js/header.js"></script>
-<script type="text/javascript" src="js/adolescent.js"></script>
+<!-- <script type="text/javascript" src="js/adolescent.js"></script> -->
 <script type="text/javascript" src="js/index.js"></script>
 <script>
 	document.addEventListener("DOMContentLoaded", function () {

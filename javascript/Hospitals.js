@@ -3,49 +3,24 @@ let slide = document.querySelector('.slide');
 
 
 let nurses = [
-//   {
-// 	nurseName: ' Brass Medical Clinic',
-// 	profile: 'View location',
-// 	link: '_medical1.html',
-// 	nurseImage: 'images/pharmacy/clinic1.jpg',
-// },
-// {
-// 	nurseName: 'Hospicare MD Clinic',
-// 	profile: 'View location',
-// 	link: '_medical2.html',
-// 	nurseImage: 'images/pharmacy/hospicare.jpg'
-// },
-// {
-// 	nurseName: ' Dr. Arvelius Medical Clinic',
-// 	profile: 'View location',
-// 	link: '_medical3.html',
-// 	nurseImage: 'images/pharmacy/clinic3.jpg'
-// },
 {
 	nurseName: 'BGH (Baguio General Hospital)',
 	profile: 'View location',
-	link: '_hospital1.html',
+	link: '_hospital1.php',
 	nurseImage: 'images/hospital/bgh.jpg'
 },
 {
 	nurseName: 'Pines City Doctors Hospital',
 	profile: 'View location',
-	link: '_hospital2.html',
+	link: '_hospital2.php',
 	nurseImage: 'images/hospital/pines.jpg'
 },
 {
 	nurseName: 'Notre Dame de Chartres Hospital',
 	profile: 'View location',
-	link: '_hospital3.html',
+	link: '_hospital3.php',
 	nurseImage: 'images/hospital/notre.jpg'
 },
-// {
-// 	nurseName: 'Hospitals',
-// 	profile: 'View location',
-// 	link: 'sophia.html',
-// 	nurseImage: 'images/pharmacy/station1.jpg'
-// },
-
 ];
 
 

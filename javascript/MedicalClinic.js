@@ -6,39 +6,21 @@ let nurses = [
   {
 	nurseName: ' Brass Medical Clinic',
 	profile: 'View location',
-	link: '_medical1.html',
+	link: '_medical1.php',
 	nurseImage: 'images/pharmacy/clinic1.jpg',
 },
 {
 	nurseName: 'Hospicare MD Clinic',
 	profile: 'View location',
-	link: '_medical2.html',
+	link: '_medical2.php',
 	nurseImage: 'images/pharmacy/hospicare.jpg'
 },
 {
 	nurseName: ' Dr. Arvelius Medical Clinic',
 	profile: 'View location',
-	link: '_medical3.html',
+	link: '_medical3.php',
 	nurseImage: 'images/pharmacy/clinic3.jpg'
 },
-// {
-// 	nurseName: 'Hospitals',
-// 	profile: 'View location',
-// 	link: 'mark.html',
-// 	nurseImage: 'images/pharmacy/station1.jpg'
-// },
-// {
-// 	nurseName: 'Hospitals',
-// 	profile: 'View location',
-// 	link: 'rutchy.html',
-// 	nurseImage: 'images/pharmacy/station1.jpg'
-// },
-// {
-// 	nurseName: 'Hospitals',
-// 	profile: 'View location',
-// 	link: 'sophia.html',
-// 	nurseImage: 'images/pharmacy/station1.jpg'
-// },
 
 ];
 

@@ -93,7 +93,12 @@
                         <li>
                             <a href="crud.php"><i class="fa fa-newspaper"></i></i><span>News</span></a>
                         </li>
-                        
+                        <li>
+                            <a href="crudServices.php"><i class="fa fa-tools"></i></i></i><span>Services</span></a>
+                        </li>
+                        <li>
+                            <a href="crudLocator.php"><i class="fa fa-map-marker-alt"></i></i></i><span>Health Locator</span></a>
+                        </li>
 												                       
                     </ul>
                 <?php } else {?>

@@ -6,39 +6,15 @@ let nurses = [
   {
 	nurseName: 'Cosape Dental Clinic',
 	profile: 'View location',
-	link: '_dental1.html',
+	link: '_dental1.php',
 	nurseImage: 'images/pharmacy/dental1.jpg',
 },
 {
 	nurseName: 'Geraldine Dental Clinic',
 	profile: 'View location',
-	link: '_dental2.html',
+	link: '_dental2.php',
 	nurseImage: 'images/pharmacy/clinic2.jpg'
 },
-// {
-// 	nurseName: 'White DentalClinic',
-// 	profile: 'View location',
-// 	link: 'julie.html',
-// 	nurseImage: 'images/pharmacy/clinic3.jpg'
-// },
-// {
-// 	nurseName: 'Hospitals',
-// 	profile: 'View location',
-// 	link: 'mark.html',
-// 	nurseImage: 'images/pharmacy/station1.jpg'
-// },
-// {
-// 	nurseName: 'Hospitals',
-// 	profile: 'View location',
-// 	link: 'rutchy.html',
-// 	nurseImage: 'images/pharmacy/station1.jpg'
-// },
-// {
-// 	nurseName: 'Hospitals',
-// 	profile: 'View location',
-// 	link: 'sophia.html',
-// 	nurseImage: 'images/pharmacy/station1.jpg'
-// },
 
 ];
 

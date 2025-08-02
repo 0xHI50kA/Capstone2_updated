@@ -263,8 +263,8 @@ h1{
 	padding: 0 5px;
 	font-weight: bold;
 	background: var(--blue);
-width: fit-content;
-border-radius: 5px;
+	width: fit-content;
+	border-radius: 5px;
 }
 .l a:hover{
 	transition: 1s;

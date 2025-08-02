@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--=========== MY CSS LINK START =============-->
+
+	<link rel="stylesheet" type="text/css" href="css/index1.css">
+	<link rel="stylesheet" type="text/css" href="css/service.css">
+	
+<!--=========== MY CSS LINK END =============-->
+
+	<!--============ FONT AWESOME CSS LINK START ============-->
+
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+
+<!--============ FONT AWESOME CSS LINK END ============-->
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FITNESS</title>
+	
+</head>
+<body>
+
+<header class="headin">
+
+
+<!--============HEADER END============---->
+	
+</header>
+<!--============HEADER END============---->
+
+<main class="main immuneV">
+	<button id="back" style="
+		margin-top: -10px;
+		padding: 10px 20px; 
+		background-color: #6c757d; 
+		color: white; 
+		border: none; 
+		border-radius: 5px; 
+		cursor: pointer; 
+		font-size: 16px;
+		transition: background-color 0.2s ease;
+	  " onclick="window.location.href='services.html'">← Back</button>
+
+	  <?php
+include 'connection.php';
+
+$sql = "SELECT * FROM immunization_section WHERE id = 1 LIMIT 1";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $immHeading = $row['heading'];
+    $immContent = $row['content'];
+    $immImage = $row['image_admin_path'];
+} else {
+    $immHeading = "No Heading Available";
+    $immContent = "No content available.";
+    $immImage = "images/default.jpg";
+}
+$conn->close();
+?>
+
+<!-- ✅ HTML OUTPUT -->
+<div>
+    <div class="row imm">
+        <div class="immT col-lg-5 col-md-6 col-sm-12 animate">
+            <div class="topV">
+                <p style="font-size: 40px;"><?= $immHeading ?></p>
+            </div>
+            <p style="font-size: 25px;"><?= nl2br(htmlspecialchars($immContent)) ?></p>
+            <a href="../../about.html" style="display: inline-block; padding: 10px 20px; color: white; background-color: #0078d7; text-decoration: none; border-radius: 5px; text-align: center;">Visit Us</a>
+        </div>
+        <div class="immI col-lg-5 col-md-6 col-sm-12 animate">
+            <img src="<?= nl2br(htmlspecialchars($immImage)) ?>" class="img-fluid" alt="Immunisation Image">
+        </div>
+    </div>
+</div>
+
+
+	
+</main>
+<!--================= FOOTER START ==================-->
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <p ><img src="./symplogo.png" alt="logo image" style="width:180px; height:37px"  ></p>
+            <p style="font-size: 20px;">SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance.</p>
+        </div>
+
+        <div class="footer-links">
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Important Links</p>
+            <ul>
+                <!-- <li ><a href="../../index.html">Home</a></li> -->
+                <li ><a href="../../Admin2/news-report.php">News</a></li>
+                <li ><a href="../../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
+                <!-- <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li> -->
+				<li ><a href="../../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
+				<li ><a href="../../nearby.html">Nearby Healthcare</a></li>
+            </ul>
+        </div>
+
+		<div class="footer-contact">
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Contact Us</p>
+			
+			<p  style="font-size: 20px;"><i class="fas fa-envelope"></i> atabhc2019@gmail.com</p>
+            <p style="font-size: 20px;"><i class="fas fa-phone" ></i> +4209087 </p>
+			
+            <p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
+        </div>
+
+        <div class="footer-social">
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
+            <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+			<a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
+            <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a> -->
+			<br>
+			<p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
+			<a href="https://doh.gov.ph" >Department of Health</a>
+			<br>
+			<a href="https://www.who.int/" >World Health Organization</a>
+			
+			
+			
+			
+			<!-- Email Icon -->
+			<!-- <a href="" style="font-size: 35px;">
+				<i class="fas fa-envelope"></i>
+			</a> -->
+        </div>
+		
+    </div>
+	<button id="backToTop"   class="back-to-top">↑ </button>
+    <!-- <div class="footer-bottom">
+        <p>&copy; 2024 Health Center. All rights reserved.</p>
+    </div> -->
+</footer>
+
+<!--================= FOOTER END ==================-->
+
+
+<script type="text/javascript" src="js/header.js"></script>
+<!-- <script type="text/javascript" src="js/adolescent.js"></script> -->
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		var backToTopButton = document.getElementById("backToTop");
+	
+		// Show/hide the button on scroll
+		window.onscroll = function () {
+			if (document.documentElement.scrollTop > 300) {
+				backToTopButton.classList.add("show");
+			} else {
+				backToTopButton.classList.remove("show");
+			}
+		};
+	
+		// Scroll smoothly to the top when clicked
+		backToTopButton.addEventListener("click", function () {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+	});
+	</script>
+	<!-- resizer to Phone view -->
+	<script>
+  	function applyResponsiveStyle() {
+    const backBtn = document.getElementById('back');
+    if (window.innerWidth <= 768) {
+      backBtn.style.fontSize = '10px';
+      backBtn.style.marginTop = '0px';
+    } else {
+      backBtn.style.fontSize = '16px';
+      backBtn.style.marginTop = '-10px';
+    }
+  }
+
+  // Run on load and resize
+  window.addEventListener('load', applyResponsiveStyle);
+  window.addEventListener('resize', applyResponsiveStyle);
+</script>
+</body>
+</html>

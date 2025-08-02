@@ -148,7 +148,7 @@ if ($result) {
 <body>
 
 <div class="page-wrapper">
-    <h1>Health News</h1>
+    <h1>Manage Health News</h1>
 
 
 

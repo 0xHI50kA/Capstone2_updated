@@ -227,13 +227,6 @@ include('includes/connection.php');
     <div class="page-wrapper">
     <h1>Dashboard</h1>
     <div class="dashboard">
-        <div class="card" onclick="window.location.href='crud.php'">
-            <h1>Manage News</h1>
-            <img src="../Admin2/images/news1.jpg" alt="News Icon">
-            <div class="content">
-                <p>Latest news to be uploaded here.</p>
-            </div>
-        </div>
         <div class="card" onclick="window.location.href='updateCalendar.php'">
 
             <h1>Manage Calendar</h1>
@@ -242,6 +235,28 @@ include('includes/connection.php');
                 <p>Upcoming events to be edited here.</p>
             </div>
         </div>
+        <div class="card" onclick="window.location.href='crud.php'">
+            <h1>Manage News</h1>
+            <img src="../Admin2/images/news1.jpg" alt="News Icon">
+            <div class="content">
+                <p>Latest news to be uploaded here.</p>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='crudServices.php'">
+            <h1>Manage Services</h1>
+            <img src="../Admin2/images/Service.png" alt="News Icon">
+            <div class="content">
+                <p>Latest news to be uploaded here.</p>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='crudLocator.php'">
+            <h1>Manage Health Locator</h1>
+            <img src="../Admin2/images/HealthLocator.png" alt="News Icon">
+            <div class="content">
+                <p>Latest news to be uploaded here.</p>
+            </div>
+        </div>
+        
     </div>
 </div>
 

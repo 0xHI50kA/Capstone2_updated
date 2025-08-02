@@ -2,14 +2,6 @@
 let Rutchy = {
 	name: 'Cosape Dental Clinic',
 	img: 'images/pharmacy/dental1.jpg',
-	Fdescrip: `Rutchy loves helping people of 
-	all ages and prides himself on being a caring 
-	and diligent nurse. She particularly enjoys
-	 relating to her patients and working with them 
-	 to achieve their best health outcomes.`,
-	Sdescrip: `Outside work, Rutchy enjoys spending 
-	time with her  family at USA including trips to the 
-	Zoo and all things Lego .`,
 };
 let RutchyPro = document.querySelector('.Rutchy');
 let renderRutchy = () => {

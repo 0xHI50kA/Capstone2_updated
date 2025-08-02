@@ -183,7 +183,7 @@ try {
 <footer>
     <div class="footer-container">
         <div class="footer-logo">
-            <p><img src="/symplogo.png" alt="logo image" width="180px"></p>
+            <p><img src="../symplogo.png" alt="logo image" width="180px"></p>
             <p style="font-size: 20px;">SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance.</p>
         </div>
 
