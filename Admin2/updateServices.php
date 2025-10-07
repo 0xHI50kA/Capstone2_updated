@@ -183,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 <div class="page-wrapper">
-    <h1>Add Immunization Content</h1>
+    <h1>Add Services</h1>
 
     <div class="news-container">
         <?php if (!empty($success)) echo "<p class='success'>$success</p>"; ?>

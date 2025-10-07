@@ -42,12 +42,12 @@
 		cursor: pointer; 
 		font-size: 16px;
 		transition: background-color 0.2s ease;
-	  " onclick="window.location.href='services.html'">← Back</button>
+	  " onclick="window.location.href='services.php'">← Back</button>
 
 	  <?php
 include 'connection.php';
 
-$sql = "SELECT * FROM immunization_section WHERE id = 2 LIMIT 1";
+$sql = "SELECT * FROM immunization_section WHERE id = 7 LIMIT 1";
 $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {

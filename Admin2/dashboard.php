@@ -246,14 +246,14 @@ include('includes/connection.php');
             <h1>Manage Services</h1>
             <img src="../Admin2/images/Service.png" alt="News Icon">
             <div class="content">
-                <p>Latest news to be uploaded here.</p>
+               <p>Service updates will be uploaded here.</p>
             </div>
         </div>
         <div class="card" onclick="window.location.href='crudLocator.php'">
             <h1>Manage Health Locator</h1>
             <img src="../Admin2/images/HealthLocator.png" alt="News Icon">
             <div class="content">
-                <p>Latest news to be uploaded here.</p>
+                <p>Health locator information will be uploaded here.</p>
             </div>
         </div>
         

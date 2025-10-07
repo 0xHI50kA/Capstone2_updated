@@ -216,7 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="page-wrapper">
-    <h1>Edit Immunization Content</h1>
+    <h1>Edit Services</h1>
     <div class="news-container">
         <form id="editForm" method="POST" enctype="multipart/form-data">
             <label for="heading">Heading:</label>

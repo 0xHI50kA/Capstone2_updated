@@ -17,6 +17,9 @@
  
         <!--============ FONT AWESOME CSS LINK END ============-->
         <style>
+            html{
+                scroll-behavior: smooth;
+            }
  .terms-container {
     
     margin: 0 auto;
@@ -153,28 +156,29 @@ input[type="checkbox"] {
 
 
     </header>
-    <div class="terms-container">
+    <div class="terms-container" id="terms_of_service">
         <main>
-            <section >
+            <section>
                 <h2 class="text-center">Terms of Service</h2>
                 <div class="cardss">
                     <p style="text-align: center;">Before using the symptom assessment, please accept the Terms of Service and Privacy Policy. Please note the following:</p>
                     <br>
                     <ul>
-                        <li>&#x2022;    The result provided by the AI Symptom Checker is not a diagnosis. It is intended for informational purposes only and should not be considered a substitute for a professional medical opinion.</li>
-                        <li>&#x2022;    In case of a health emergency, do not use this tool. Immediately call your local emergency number or seek professional medical assistance.</li>
-                        <li>&#x2022;    The AI Symptom Checker is intended for users 18 years and older. If you are under 18 and need assistance, please consult a parent, guardian, or healthcare professional for guidance.</li>
-                        <li>&#x2022;    Your data is secure and will be handled according to strict privacy standards. The information you provide will not be shared or used for identification purposes, and it will be used solely for the purpose of improving the symptom assessment.</li>
+                        <li>&#x2022; The result provided by the AI Symptom Checker is not a diagnosis. It is intended for informational purposes only and should not be considered a substitute for a professional medical opinion.</li>
+                        <li>&#x2022; In case of a health emergency, do not use this tool. Immediately call your local emergency number or seek professional medical assistance.</li>
+                        <li>&#x2022; The AI Symptom Checker is intended for users aged 18 to 65 years old only. If you are outside this age range and need assistance, please consult a parent, guardian, or healthcare professional for appropriate support.</li>
+                        <li>&#x2022; Your data is secure and will be handled according to strict privacy standards. The information you provide will not be shared or used for identification purposes, and it will be used solely for the purpose of improving the symptom assessment.</li>
                     </ul>
                 </div>
             </section>
+
             <section>
                 <div class="cardss">
                     <p>Please review and accept the following:</p>
                     <div class="terms-list">
                         <p>
                             <input type="checkbox" id="terms-checkbox">
-                            I have read and accept the <a href="#" id="terms-link">Terms of Service</a>.
+                            I have read and accept the <a href="#terms_of_service" >Terms of Service</a>.
                         </p>
                         <p>
                             <input type="checkbox" id="privacy-checkbox">

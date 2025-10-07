@@ -5,7 +5,7 @@ if (empty($_SESSION['name'])) {
     exit;
 }
 
-include('header2.php');
+include('header4.php');
 
 // PDO DB connection
 $host = "localhost";

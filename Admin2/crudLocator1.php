@@ -39,7 +39,7 @@ if (isset($_GET['delete'])) {
     $delete->execute();
     $delete->close();
 
-    header("Location: manageMedicalClinics.php?deleted=1");
+    header("Location: crudLocator1.php?deleted=1");
     exit;
 }
 
@@ -69,6 +69,7 @@ if ($result) {
             padding: 20px;
             background-color: #f4f4f4;
             min-height: 100vh;
+            /* z-index: 1000; */
         }
 
         .news-container {
@@ -134,7 +135,7 @@ if ($result) {
 </head>
 <body>
 <div class="page-wrapper">
-    <h1>Medical Clinics</h1>
+    <h1>Manage Medical Clinics</h1>
 
     <div class="news-container">
         <a href="updateLocator1.php" class="button">➕ Add Healthcare</a>

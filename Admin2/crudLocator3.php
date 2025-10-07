@@ -39,7 +39,7 @@ if (isset($_GET['delete'])) {
     $delete->execute();
     $delete->close();
 
-    header("Location: manageHospitals.php?deleted=1");
+    header("Location: crudLocator3.php?deleted=1");
     exit;
 }
 

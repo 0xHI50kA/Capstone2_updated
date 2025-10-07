@@ -42,7 +42,7 @@
 		cursor: pointer; 
 		font-size: 16px;
 		transition: background-color 0.2s ease;
-	  " onclick="window.location.href='services.html'">← Back</button>
+	  " onclick="window.location.href='services.php'">← Back</button>
 
 	  <?php
 include 'connection.php';

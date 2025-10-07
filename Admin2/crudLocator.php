@@ -28,7 +28,7 @@ if (isset($_GET['delete'])) {
     $delete->execute();
     $delete->close();
 
-    header("Location: manageNurseProfiles.php?deleted=1");
+    header("Location: crudLocator.php?deleted=1");
     exit;
 }
 
@@ -46,7 +46,7 @@ if ($result) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Nurse Clinic Profiles</title>
+    <title>Manage Dental Clinic</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
@@ -123,10 +123,10 @@ if ($result) {
 </head>
 <body>
 <div class="page-wrapper">
-    <h1>Manage Clinics</h1>
+    <h1>Manage Dental Clinic</h1>
 
     <div class="news-container">
-        <a href="addNurseProfile.php" class="button">➕ Add Healthcare</a>
+        <a href="updateLocator.php" class="button">➕ Add Healthcare</a>
         <label for="categorySelect"><strong>View Category:</strong></label>
         <select id="categorySelect" onchange="navigateCategory()" style="padding: 8px; border-radius: 6px; font-size: 14px;">
             <option value="crudLocator.php" selected>🦷 Dental Clinics</option>
@@ -149,7 +149,7 @@ if ($result) {
                     <?php foreach ($data as $row): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
-                            <td><img class="img" src="<?php echo htmlspecialchars($row['image_path']); ?>" alt="Clinic Image"></td>
+                            <td><img class=" img" src="<?php echo htmlspecialchars($row['image_path']); ?>" alt="Clinic Image"></td>
                             <td class="map-embed"><?php echo $row['map_embed']; ?></td>
                             <td style="width: 70px;">
                                 <a href="editLocator.php?id=<?php echo $row['id']; ?>" style="width:63px;" class="button">Edit</a>

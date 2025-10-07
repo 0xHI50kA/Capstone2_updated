@@ -30,8 +30,12 @@ try {
 
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $category = $_POST["category"];
     $title = $_POST["title"];
     $content = $_POST["content"];
+
+    // Combine category and title
+    $fullTitle = strtoupper($category) . ": " . $title;
 
     $targetDir = "uploads/";
     if (!file_exists($targetDir)) {
@@ -44,13 +48,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
         $sql = "INSERT INTO news (title, content, image) VALUES (:title, :content, :image)";
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(":title", $title);
+        $stmt->bindParam(":title", $fullTitle);
         $stmt->bindParam(":content", $content);
         $stmt->bindParam(":image", $imageName);
 
         if ($stmt->execute()) {
             echo "<script>
-                setTimeout(function(){ window.location.href = 'crud.php'; }, 00);
+                setTimeout(function(){ window.location.href = 'crud.php'; }, 0);
             </script>";
         } else {
             $errorMessage = "Failed to add news report.";
@@ -217,23 +221,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if (!empty($successMessage)) echo "<p class='success'>$successMessage</p>"; ?>
 
         <form id="newsForm" method="POST" action="" enctype="multipart/form-data">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required>
+            <!-- Category Dropdown -->
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>Select category</option>
+                <option value="Announcement">Announcement</option>
+                <option value="Advisory">Advisory</option>
+                <option value="Health Campaign">Health Campaign</option>
+                <option value="Health Tips">Health Tips</option>
+            </select>
 
+            <!-- Title Input -->
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required style="text-transform: uppercase;">
+
+            <!-- Content Textarea -->
             <label for="content">Content:</label>
             <textarea id="content" name="content" rows="8" required></textarea>
+            <script>
+document.getElementById("content").addEventListener("input", function () {
+    this.value = this.value.replace(/[\r\n\t ]+/g, '');
+});
+</script>
 
+            <!-- Image Upload -->
             <label for="image">Upload Image:</label>
             <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)" required>
 
+            <!-- Image Preview -->
             <div class="image-preview">
                 <img id="preview" alt="Image Preview">
             </div>
+
+            <!-- Buttons -->
             <div style="display: flex; gap: 10px;">
-    <button type="button" class="btn-primary" onclick="openModal()">Submit</button>
-    <a href="crud.php" class="btn-secondary" style="text-decoration: none; padding: 12px 20px; background-color: #6c757d; color: white; border-radius: 5px; text-align: center;">Back</a>
-</div>
-                
+                <button type="button" class="btn-primary" onclick="openModal()">Submit</button>
+                <a href="crud.php" class="btn-secondary" style="text-decoration: none; padding: 12px 20px; background-color: #6c757d; color: white; border-radius: 5px; text-align: center;">Back</a>
+            </div>
         </form>
     </div>
 </div>

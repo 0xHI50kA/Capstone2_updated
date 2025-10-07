@@ -155,7 +155,7 @@ try {
     <div class="news-container">
     <?php if (!empty($newsItems) && count($newsItems) > 0): ?>
         <?php foreach ($newsItems as $news): ?>
-            <div class="news-item" onclick="openModal('<?php echo addslashes($news['title']); ?>', '<?php echo addslashes($news['content']); ?>', '<?php echo htmlspecialchars($news['image']); ?>')">
+            <div  class="news-item" onclick="openModal('<?php echo addslashes($news['title']); ?>', '<?php echo addslashes($news['content']); ?>', '<?php echo htmlspecialchars($news['image']); ?>')">
                 <img src="uploads/<?php echo htmlspecialchars($news['image']); ?>" alt="News Image">
                 <h3><?php echo htmlspecialchars($news['title']); ?></h3>
                 <p><?php echo htmlspecialchars(substr($news['content'], 0, 80)) . '...'; ?></p>
@@ -172,7 +172,7 @@ try {
     <div id="newsModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle"></h2>
+            <h2 style="margin-top: 30px;" id="modalTitle"></h2>
             <p id="modalContent"></p>
             <img id="modalImage" src="" alt="News Image" style="width:100%; max-height:100%; object-fit:cover; border-radius:5px;">
         </div>

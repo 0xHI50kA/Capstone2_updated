@@ -5,7 +5,7 @@ if (empty($_SESSION['name'])) {
     exit;
 }
 
-include('header3.php');
+include('header4.php');
 include '../AAtabHealthCare/servicess/connection.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Clinic</title>
+    <title>Edit Dental Clinic</title>
     <style>
         body {
             font-family: Arial, sans-serif;

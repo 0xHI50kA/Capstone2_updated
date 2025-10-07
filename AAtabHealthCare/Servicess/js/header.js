@@ -12,7 +12,7 @@ function renderHeader(argument) {
 		<ul> <li><a href="../../index.html">Home</a></li> 
 		<li class="drop news"><a href="../../Admin2/news-report.php">News</a> </i>
 			<li><a href="../Eventss/Event1.html">Events</a></li>
-			<li class="home2"><a class="subnav" href="services.html">Services </a> </i>
+			<li class="home2"><a class="subnav" href="services.php">Services </a> </i>
 				<!-- <ul class="drp">
 					<li><a href="Immunisation.html">Immunization</a></li>
 					<li><a href="Surgery.html">Consultations</a></li>

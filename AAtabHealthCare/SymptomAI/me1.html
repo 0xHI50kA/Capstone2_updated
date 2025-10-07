@@ -83,7 +83,7 @@ button {
 
     <div class="age-verification-container">
         <h2>Age Verification</h2>
-        <p>You must be at least 18 years old to use the Symptom Checker. By proceeding, you confirm that you meet this age requirement.</p>
+        <p>  You must be between <strong>18 - 65 years old</strong> to use the Symptom Checker. By proceeding, you confirm that you meet this age requirement.</p>
         <br><br>
         <div class="age-input-card">
             <h1>How Old Are You?</h1>
@@ -158,47 +158,49 @@ button {
 <!--================= FOOTER END ==================-->
     
 
-    <script>
-        function checkAge() {
-            const age = document.getElementById("ageInput").value;
-            const message = document.getElementById("message");
-            const submitButton = document.getElementById("submitButton");
-            const backDiv = document.getElementById("backDiv");
+<script>
+    function checkAge() {
+        const age = parseInt(document.getElementById("ageInput").value);
+        const message = document.getElementById("message");
+        const submitButton = document.getElementById("submitButton");
+        const backDiv = document.getElementById("backDiv");
 
-            if (!age) {
-                message.textContent = "Please enter your age.";
-                return;
-            }
-
-            if (age < 18) {
-                // Remove Submit button and show back button
-                submitButton.style.display = "none";
-                backDiv.style.display = "block";
-
-                message.textContent = 
-                    "Users under 18 cannot use the symptom checker. " +
-                    "Please seek assistance from an adult or visit a nearby healthcare center.";
-                message.style.color = "red";
-            } else {
-                // Redirect if user is 18+
-                message.textContent = 
-                    "You are eligible to use the symptom checker. Redirecting...";
-                message.style.color = "green";
-
-                // Redirect to the symptom checker page
-                setTimeout(() => {
-                    window.location.href = "me2.html";
-                }, 2000);
-            }
+        if (!age || isNaN(age)) {
+            message.textContent = "Please enter a valid age.";
+            message.style.color = "red";
+            return;
         }
 
-        function goBack() {
-            window.location.href = "../../index.html";
+        if (age < 18 || age > 65) {
+            // Hide submit, show back
+            submitButton.style.display = "none";
+            backDiv.style.display = "block";
+
+            message.textContent = 
+                "Only users aged 18 to 65 can use the symptom checker. " +
+                "Please consult a healthcare professional for assistance.";
+            message.style.color = "red";
+        } else {
+            // Valid age: 18–65
+            message.textContent = 
+                "You are eligible to use the symptom checker. Redirecting...";
+            message.style.color = "green";
+
+            setTimeout(() => {
+                window.location.href = "me2.html";
+            }, 2000);
         }
-        function goBack1() {
-            window.location.href = "terms.html";
-        }
-    </script>
+    }
+
+    function goBack() {
+        window.location.href = "../../index.html";
+    }
+
+    function goBack1() {
+        window.location.href = "terms.html";
+    }
+</script>
+
     <script type="text/javascript" src="AiHeader.js"></script>
     <script type="text/javascript" src="AiIndex.js"></script>
     <script>

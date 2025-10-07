@@ -5,7 +5,7 @@ if (empty($_SESSION['name'])) {
     exit;
 }
 
-include('header2.php');
+include('header4.php');
 
 // PDO DB connection
 $host = "localhost";
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(":embed", $mapEmbed);
 
         if ($stmt->execute()) {
-            echo "<script>setTimeout(() => { window.location.href = 'manageNurseProfiles.php'; }, 0);</script>";
+            echo "<script>setTimeout(() => { window.location.href = 'crudLocator.php'; }, 0);</script>";
         } else {
             $errorMessage = "Failed to save profile.";
         }
@@ -177,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="page-wrapper">
     <div class="container">
-        <h1>Add Nurse Profile</h1>
+        <h1>Add Dental Clinic</h1>
 
         <?php if (!empty($errorMessage)) echo "<p class='error'>$errorMessage</p>"; ?>
 
@@ -197,7 +197,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div style="display: flex; gap: 10px;">
                 <button type="button" class="btn-primary" onclick="openModal()">Submit</button>
-                <a href="manageNurseProfiles.php" style="text-decoration:none; background:#6c757d; color:white; padding:12px 20px; border-radius:6px;">Back</a>
+                <a href="crudLocator.php" style="text-decoration:none; background:#6c757d; color:white; padding:12px 20px; border-radius:6px;">Back</a>
             </div>
         </form>
     </div>
