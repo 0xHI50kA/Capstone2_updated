@@ -10,7 +10,7 @@ function renderHeader(argument) {
 	<!--nav links-->
 	<div class="links">
 		<ul> <li><a href="../../index.html">Home</a></li> 
-		<li class="drop news"><a href="../../Admin2/news-report.php">News</a> </i>
+		<li class="drop news"><a href="../../Admin2/news-report.php">Announcement</a> </i>
 			<li><a href="../Eventss/Event1.html">Events</a></li>
 			<li class="home2"><a class="subnav" href="services.php">Services </a> </i>
 				<!-- <ul class="drp">

@@ -191,7 +191,7 @@ try {
             <p class="footheader" style="font-weight: bold;font-size: 25px;">Important Links</p>
             <ul>
                 <!-- <li ><a href="../../index.html">Home</a></li> -->
-                <li ><a href="/AtabsHealthCare10/Admin2/news-report.php">News</a></li>
+                <li ><a href="/AtabsHealthCare10/Admin2/news-report.php">Announcement</a></li>
                 <li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
                 <!-- <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li> -->
 				<li ><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>

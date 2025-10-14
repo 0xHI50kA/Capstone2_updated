@@ -11,7 +11,7 @@ function renderHeader(argument) {
 	<div class="links">
 		<ul> 
 			<li class="home1"><a href="../index.html">Home</a></li> 
-			<li class="home2" ><a   href="../../AtabsHealthCare10/Admin2/news-report.php">News</a> </i>
+			<li class="home2" ><a   href="../../AtabsHealthCare10/Admin2/news-report.php">Announcement</a> </i>
 			<li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
 			<li ><a class="subnav" href="../AAtabHealthCare/Servicess/services.html">Services </a> </i>
 			<li><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom checker</a></li>	
