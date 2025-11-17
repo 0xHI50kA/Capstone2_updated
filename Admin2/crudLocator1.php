@@ -131,6 +131,30 @@ if ($result) {
 
         .button.delete { background-color: red; }
         .button.delete:hover { background-color: darkred; }
+
+        /* Modal */
+        #confirmModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 300px;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+        }
     </style>
 </head>
 <body>
@@ -165,7 +189,8 @@ if ($result) {
                             <td class="map-embed"><?php echo $row['map_embed']; ?></td>
                             <td style="width: 70px;">
                                 <a style="width:63px;" href="editLocator1.php?id=<?php echo $row['id']; ?>"  class="button">Edit</a>
-                                <a href="?delete=<?php echo $row['id']; ?>" class="button delete" onclick="return confirm('Delete this clinic?')">Delete</a>
+                                <button class="button delete" onclick="showModal(<?php echo $row['id']; ?>)">Delete</button>
+                                <!-- <a href="?delete=<?php echo $row['id']; ?>" class="button delete" onclick="return confirm('Delete this clinic?')">Delete</a> -->
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -176,6 +201,54 @@ if ($result) {
         </table>
     </div>
 </div>
+<!-- Delete Confirmation Modal -->
+<div id="confirmModal">
+    <div class="modal-content">
+        <h2>❗ Confirm Deletion</h2>
+        <p>Are you sure you want to delete this news post?</p>
+        <div id="modalForm">
+            <input type="hidden" id="deleteId">
+            <button type="button" class="button delete" onclick="performDelete()">Yes, Delete</button>
+            <button type="button" class="button" onclick="closeModal()">Cancel</button>
+        </div>
+        <div id="successMessage" style="display: none; color: green; font-weight: bold; margin-top: 15px;">
+            ✅ Deleted successfully!
+        </div>
+    </div>
+</div>
+
+<script>
+    function showModal(id) {
+        document.getElementById('deleteId').value = id;
+        document.getElementById('confirmModal').style.display = 'flex';
+        document.getElementById('modalForm').style.display = 'block';
+        document.getElementById('successMessage').style.display = 'none';
+    }
+
+    function closeModal() {
+        document.getElementById('confirmModal').style.display = 'none';
+    }
+
+    function performDelete() {
+        const id = document.getElementById('deleteId').value;
+        // Hide buttons
+        document.getElementById('modalForm').style.display = 'none';
+        // Show success
+        document.getElementById('successMessage').style.display = 'block';
+
+        // Wait a bit and redirect
+        setTimeout(() => {
+            window.location.href = `crudLocator1.php?delete=${id}`;
+        }, 1500);
+    }
+
+    // Optional: hide toast if using GET redirect
+    setTimeout(() => {
+        const toast = document.querySelector('.success-toast');
+        if (toast) toast.style.display = 'none';
+    }, 4000);
+</script>
+
 
 <?php include('footer.php'); ob_end_flush(); ?>
 <script>

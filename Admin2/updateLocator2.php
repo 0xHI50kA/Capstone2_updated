@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .btn-primary {
             padding: 12px;
             font-size: 16px;
-            background-color: #28a745;
+            background-color: #007bff;
             color: white;
             border: none;
             border-radius: 6px;
@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .btn-primary:hover {
-            background-color: #218838;
+            background-color: #0056b3;
         }
 
         .image-preview {
@@ -196,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div style="display: flex; gap: 10px;">
-                <button type="button" class="btn-primary" onclick="openModal()">Submit</button>
+                <button type="submit" class="btn-primary">Submit</button>
                 <a href="crudLocator2.php" style="text-decoration:none; background:#6c757d; color:white; padding:12px 20px; border-radius:6px;">Back</a>
             </div>
         </form>

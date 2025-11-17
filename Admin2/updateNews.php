@@ -233,17 +233,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!-- Title Input -->
             <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required style="text-transform: uppercase;">
+            <input type="text" id="title" name="title" required >
 
             <!-- Content Textarea -->
-            <label for="content">Content:</label>
+            <label for="content" required>Content:</label>
             <textarea id="content" name="content" rows="8" required></textarea>
-            <script>
-document.getElementById("content").addEventListener("input", function () {
-    this.value = this.value.replace(/[\r\n\t ]+/g, '');
-});
-</script>
-
+            
             <!-- Image Upload -->
             <label for="image">Upload Image:</label>
             <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)" required>
@@ -255,7 +250,7 @@ document.getElementById("content").addEventListener("input", function () {
 
             <!-- Buttons -->
             <div style="display: flex; gap: 10px;">
-                <button type="button" class="btn-primary" onclick="openModal()">Submit</button>
+                <button type="submit" class="btn-primary">Submit</button>
                 <a href="crud.php" class="btn-secondary" style="text-decoration: none; padding: 12px 20px; background-color: #6c757d; color: white; border-radius: 5px; text-align: center;">Back</a>
             </div>
         </form>
@@ -278,6 +273,7 @@ document.getElementById("content").addEventListener("input", function () {
 </div>
 
 <script>
+    
     function previewImage(event) {
         const preview = document.getElementById("preview");
         const file = event.target.files[0];

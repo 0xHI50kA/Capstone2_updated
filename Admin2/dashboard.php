@@ -178,7 +178,7 @@ include('includes/connection.php');
         .dashboard {
             display: flex;
             gap: 20px;
-            width: 80%;
+            width: 100%;
             max-width: 1200px;
             justify-content: center;
         }
@@ -236,10 +236,10 @@ include('includes/connection.php');
             </div>
         </div>
         <div class="card" onclick="window.location.href='crud.php'">
-            <h1>Manage News</h1>
+            <h1>Manage Announcement</h1>
             <img src="../Admin2/images/news1.jpg" alt="News Icon">
             <div class="content">
-                <p>Latest news to be uploaded here.</p>
+                <p>Latest Announcement to be uploaded here.</p>
             </div>
         </div>
         <div class="card" onclick="window.location.href='crudServices.php'">

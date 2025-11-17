@@ -76,6 +76,7 @@ try {
         .news-item h3 {
             font-size: 1.4em;
             color: #333;
+            
         }
 
         .news-item p {
@@ -152,15 +153,19 @@ try {
 </header>
         <h1 >📰 Latest Health News From Atabs Health Care Center</h1>
 
-    <div class="news-container">
+<div class="news-container">
     <?php if (!empty($newsItems) && count($newsItems) > 0): ?>
-        <?php foreach ($newsItems as $news): ?>
-            <div  class="news-item" onclick="openModal('<?php echo addslashes($news['title']); ?>', '<?php echo addslashes($news['content']); ?>', '<?php echo htmlspecialchars($news['image']); ?>')">
+        <?php foreach ($newsItems as $news): 
+            $title = json_encode($news['title']);
+            $content = json_encode($news['content']);
+            $image = json_encode($news['image']);
+        ?>
+            <div class="news-item"
+                 onclick='openModal(<?php echo "$title, $content, $image"; ?>)'>
                 <img src="uploads/<?php echo htmlspecialchars($news['image']); ?>" alt="News Image">
-                <h3><?php echo htmlspecialchars($news['title']); ?></h3>
+                <h3><?php echo strtoupper(htmlspecialchars($news['title'])); ?></h3>
                 <p><?php echo htmlspecialchars(substr($news['content'], 0, 80)) . '...'; ?></p>
             </div>
-            
         <?php endforeach; ?>
     <?php else: ?>
         <p>No news reports found.</p>
@@ -168,11 +173,12 @@ try {
 </div>
 
 
+
     <!-- Modal -->
     <div id="newsModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2 style="margin-top: 30px;" id="modalTitle"></h2>
+            <h2 style="margin-top: 30px; text-transform: uppercase;" id="modalTitle"></h2>
             <p id="modalContent"></p>
             <img id="modalImage" src="" alt="News Image" style="width:100%; max-height:100%; object-fit:cover; border-radius:5px;">
         </div>

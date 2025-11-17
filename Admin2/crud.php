@@ -148,12 +148,12 @@ if ($result) {
 <body>
 
 <div class="page-wrapper">
-    <h1>Manage Health News</h1>
+    <h1>Manage Announcement</h1>
 
 
 
     <div class="news-container">
-        <a href="updateNews.php" class="button">➕ Add News</a>
+        <a href="updateNews.php" class="button">➕ Add Announcement</a>
         <br><br>
         <table>
             <thead>
@@ -168,7 +168,7 @@ if ($result) {
             <?php if (!empty($newsItems)): ?>
                 <?php foreach ($newsItems as $news): ?>
                     <tr>
-                        <td style="width: 150px;"><?php echo htmlspecialchars($news['title']); ?></td>
+                        <td style="width: 150px;text-transform: uppercase;"><?php echo htmlspecialchars($news['title']); ?></td>
                         <td><img class="img" src="uploads/<?php echo htmlspecialchars($news['image']); ?>" alt="News Image"></td>
                         <td><?php echo htmlspecialchars(substr($news['content'], 0, 80)); ?>...</td>
                         <td style="width: 70px;">
@@ -178,7 +178,7 @@ if ($result) {
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
-                <tr><td colspan="4">No news available.</td></tr>
+                <tr><td colspan="4">No Announcement available.</td></tr>
             <?php endif; ?>
             </tbody>
         </table>

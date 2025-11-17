@@ -196,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div style="display: flex; gap: 10px;">
-                <button type="button" class="btn-primary" onclick="openModal()">Submit</button>
+                <button type="submit" class="btn-primary">Submit</button>
                 <a href="crudLocator.php" style="text-decoration:none; background:#6c757d; color:white; padding:12px 20px; border-radius:6px;">Back</a>
             </div>
         </form>

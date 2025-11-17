@@ -91,7 +91,7 @@
                             <a href="updateCalendar.php"><i class="fa fa-calendar"></i> <span>Event Calendar</span></a>
                         </li>
                         <li >
-                            <a href="crud.php"><i class="fa fa-newspaper"></i><span>News</span></a>
+                            <a href="crud.php"><i class="fa fa-newspaper"></i><span>Announcement</span></a>
                         </li>
                         <li class="active">
                             <a href="crudServices.php"><i class="fa fa-tools"></i><span>Services</span></a>
